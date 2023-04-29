@@ -11,10 +11,25 @@ public class Arrays {
     }
 
     public static boolean jump(int[] nums) {
-        int k = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            if (i >= k) return true;
-            k = Math.max(k, nums[i] + i);
+        int len = nums.length;
+        int k = 0;
+        for (int i = 0; i < len; i++) {
+            if (i > k) return false;
+            k = Math.max(k, i + nums[i]);
+        }
+        return true;
+    }
+
+    public static boolean jump_1(int[] nums) {
+        int rightMost = 0;
+        int len = nums.length;
+        for (int i = 0; i < len; i++) {
+            if (i <= rightMost) {
+                rightMost = Math.max(rightMost, nums[i] + i);
+                if (rightMost >= len - 1) {
+                    return true;
+                }
+            }
         }
         return false;
     }
@@ -40,8 +55,8 @@ public class Arrays {
         int maxPosition = 0;
         int len = nums.length;
         for (int i = 0; i < len - 1; i++) {
-            maxPosition = Math.max(maxPosition,i+nums[i]);
-            if(i == end){
+            maxPosition = Math.max(maxPosition, i + nums[i]);
+            if (i == end) {
                 end = maxPosition;
                 step++;
             }
