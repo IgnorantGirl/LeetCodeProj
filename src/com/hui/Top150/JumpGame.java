@@ -1,6 +1,6 @@
 package com.hui.Top150;
 
-public class Arrays {
+public class JumpGame {
 
     public static void main(String[] args) {
         int[] arr = new int[]{2, 3, 1, 1, 4};
