@@ -7,7 +7,8 @@ public class FullJustify68 {
 
     public static void main(String[] args) {
         String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
-        System.out.println(fullJustify(words,16));
+        String[] words1 = {"What", "must", "be", "acknowledgment", "shall", "be"};
+        System.out.println(fullJustify(words1, 16));
 
     }
 
@@ -26,8 +27,8 @@ public class FullJustify68 {
             // 最后一行特殊处理
             if (right == len) {
                 StringBuilder builder = new StringBuilder();
-                builder.append(join(words,left,right," "));
-                builder.append(blank(maxWidth-sumLen));
+                builder.append(join(words, left, right, " "));
+                builder.append(blank(maxWidth - builder.length()));
                 res.add(builder.toString());
                 return res;
             }
@@ -38,26 +39,27 @@ public class FullJustify68 {
 
 
             //　一行只有一个单词的情况处理
-            if(wordsNums == 1){
-                StringBuilder builder = new StringBuilder();
-                builder.append(join(words,left,right,blank(maxWidth-sumLen)));
+            if (wordsNums == 1) {
+                StringBuilder builder = new StringBuilder(words[left]);
+                builder.append(blank(maxWidth - words[left].length()));
                 res.add(builder.toString());
+                continue;
             }
             //　一般情况
             //　平均两单词之间的空格数量
-            int avgSpace = (spaceNums)/(wordsNums-1);
-            int extraSpace = spaceNums%(wordsNums-1);
+            int avgSpace = (spaceNums) / (wordsNums - 1);
+            int extraSpace = spaceNums % (wordsNums - 1);
             StringBuilder builder = new StringBuilder();
-            builder.append(join(words,left,left+extraSpace+1,blank(extraSpace)));
+            builder.append(join(words, left, left + extraSpace + 1, blank(avgSpace + 1)));
             builder.append(blank(avgSpace));
-            builder.append(join(words,left+extraSpace+1,right,blank(avgSpace)));
+            builder.append(join(words, left + extraSpace + 1, right, blank(avgSpace)));
             res.add(builder.toString());
         }
     }
 
     private static String blank(int count) {
         StringBuilder builder = new StringBuilder();
-        for(int i=0;i<count;i++){
+        for (int i = 0; i < count; i++) {
             builder.append(" ");
         }
         return builder.toString();
@@ -65,7 +67,7 @@ public class FullJustify68 {
 
     private static String join(String[] words, int left, int right, String space) {
         StringBuilder builder = new StringBuilder(words[left]);
-        for(int i=left+1;i<right;i++){
+        for (int i = left + 1; i < right; i++) {
             builder.append(space);
             builder.append(words[i]);
         }

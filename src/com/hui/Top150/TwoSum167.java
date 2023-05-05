@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class TwoSum167 {
     public static void main(String[] args) {
         // 1,2,5,7
-        System.out.println(Arrays.toString(twoSum(new int[]{1,2,5,7},12)));
+        System.out.println(Arrays.toString(twoSum(new int[]{1, 2, 5, 7}, 12)));
     }
 
     public static int[] twoSum(int[] numbers, int target) {
@@ -18,7 +18,7 @@ public class TwoSum167 {
             } else if (cur < target) {
                 left++;
             } else {
-                return new int[]{left, right};
+                return new int[]{left + 1, right + 1};
             }
         }
         return null;
