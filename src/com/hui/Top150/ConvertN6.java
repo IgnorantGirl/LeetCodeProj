@@ -10,6 +10,7 @@ public class ConvertN6 {
     }
 
     public static String convert(String s, int numRows) {
+        if (numRows == 1) return s;
         // 变换行数的标识
         int flag = -1;
         StringBuilder res = new StringBuilder();
@@ -20,7 +21,7 @@ public class ConvertN6 {
         }
         for (int i = 0, n = 0; i < s.length(); i++, n += flag) {
             rowList.get(n).append(s.charAt(i));
-            if (n == 0 || n == rowList.size()-1) {
+            if (n == 0 || n == rowList.size() - 1) {
                 flag = -flag;
             }
         }
