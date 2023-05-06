@@ -12,7 +12,7 @@ public class Palindrome125 {
 
     public static boolean isPalindrome(String s) {
         s = s.trim().toLowerCase();
-        s = s.replaceAll("[^a-z]", "");
+        s = s.replaceAll("[^a-z0-9]", "");
         int len = s.length();
         int count = 0;
         for (int i = 0; i < len / 2; i++) {
