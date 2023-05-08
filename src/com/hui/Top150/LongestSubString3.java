@@ -10,6 +10,7 @@ public class LongestSubString3 {
         //输出: 3
         lengthOfLongestSubstring("abcabcbb");
         System.out.println(lengthOfLongestSubstring1("abcabcbb"));
+        System.out.println(lengthOfLongestSubstring2("pwwkew"));
     }
 
     public static int lengthOfLongestSubstring(String s) {
@@ -44,5 +45,24 @@ public class LongestSubString3 {
             count = Math.max(count, right - left + 1);
         }
         return count;
+    }
+
+    public static int lengthOfLongestSubstring2(String s) {
+        Map<Character, Integer> maps = new HashMap<>();
+        int left = 0;
+        int right = 0;
+        int ans = 0;
+        while (right < s.length()) {
+            char c = s.charAt(right);
+            right++;
+            maps.put(c, maps.getOrDefault(c, 0) + 1);
+            while (maps.get(c) > 1) {
+                char leftChar = s.charAt(left);
+                left++;
+                maps.put(leftChar, maps.get(leftChar) - 1);
+            }
+            ans = Math.max(ans, right - left);
+        }
+        return ans;
     }
 }
