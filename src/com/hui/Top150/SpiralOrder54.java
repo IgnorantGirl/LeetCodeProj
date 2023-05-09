@@ -22,11 +22,11 @@ public class SpiralOrder54 {
             for (int i = top; i <= bottom; i++) {
                 res.add(matrix[i][right]);
             }
-            if(--right<0) break;
+            if(--right<left) break;
             for (int i = right; i >=left; i--) {
                 res.add(matrix[bottom][i]);
             }
-            if(--bottom<0) break;
+            if(--bottom<top) break;
             for (int i = bottom; i >=top; i--) {
                 res.add(matrix[i][left]);
             }
