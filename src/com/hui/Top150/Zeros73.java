@@ -34,4 +34,50 @@ public class Zeros73 {
             }
         }
     }
+
+    public static void setZeroes2(int[][] matrix) {
+        // 使用两个标记变量 来 标记第一行第一列 中是否有0
+        boolean flagRows = false, flagColumns = false;
+        int rows = matrix.length;
+        int column = matrix[0].length;
+        for (int i = 0; i < rows; i++) {
+            if (matrix[i][0] == 0) {
+                flagColumns = true;
+            }
+        }
+        for (int j = 0; j < column; j++) {
+            if (matrix[0][j] == 0) {
+                flagRows = true;
+            }
+        }
+        // 使用第一行第一列 作为改行该列 是否有0的标记
+        for (int i = 1; i < rows; i++) {
+            for (int j = 1; j < column; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+
+        // 遍历第一行第一列为0 的情况   将该行 该列 都置0
+        for (int i = 1; i < rows; i++) {
+            for (int j = 1; j < column; j++) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        if (flagColumns) {
+            for (int i = 0; i < rows; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+        if (flagRows) {
+            for (int j = 0; j < column; j++) {
+                matrix[0][j] = 0;
+            }
+        }
+    }
 }

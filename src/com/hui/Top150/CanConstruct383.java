@@ -3,6 +3,8 @@ package com.hui.Top150;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class CanConstruct383 {
     public static void main(String[] args) {
@@ -10,6 +12,10 @@ public class CanConstruct383 {
         System.out.println(canConstruct("aa", "aab"));
         System.out.println(canConstruct1("aa", "aab"));
 
+        Lock lock = new ReentrantLock();
+
+        lock.lock();
+        lock.unlock();
     }
 
     public static boolean canConstruct(String ransomNote, String magazine) {
