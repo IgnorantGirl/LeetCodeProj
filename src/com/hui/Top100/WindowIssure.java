@@ -13,7 +13,8 @@ public class WindowIssure {
 
 
     public static void main(String[] args) {
-        System.out.println(minWindow("ADOBECODEBANC","ABC"));
+        // System.out.println(minWindow("ADOBECODEBANC", "ABC"));
+        System.out.println(findAnagrams("abab", "ab"));
     }
 
     /**
@@ -27,7 +28,7 @@ public class WindowIssure {
      * @param s 字符串 "abcabcbb"
      * @return 最长子串的个数
      */
-    public  static int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         int len = s.length();
         if (len == 1 || len == 0) return len;
         Map<Character, Integer> maps = new HashMap<>();
@@ -52,9 +53,9 @@ public class WindowIssure {
     /**
      * 438.找到字符串中所有字母异位词
      * 思想：
-     * 1.
-     * 2.
-     * 3.
+     * 1.使用两个map 分别存取 子串need及其 字符串的窗口window，以字符为key, 数量为value
+     * 2.使用左右指针进行对窗口 扩大和缩小 right-扩大；left-缩小
+     * 3.当need与window窗口中元素及其数量都对应上时，则valid++;
      *
      * @param s 字符串 "cbaebabacd"
      * @param p 待寻找异位词的字符串 "abc"
@@ -62,25 +63,58 @@ public class WindowIssure {
      */
     public static List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
-
+        int sLen = s.length();
+        int pLen = p.length();
+        if (sLen < pLen) {
+            return res;
+        }
+        Map<Character, Integer> need = new HashMap<>();
+        Map<Character, Integer> window = new HashMap<>();
+        for (char c : p.toCharArray()) {
+            need.put(c, need.getOrDefault(c, 0) + 1);
+        }
+        int left = 0;
+        int right = 0;
+        int valid = 0;
+        while (right < sLen) {
+            char rightChar = s.charAt(right);
+            right++;
+            if (need.containsKey(rightChar)) {
+                window.put(rightChar, window.getOrDefault(rightChar, 0) + 1);
+                if (need.get(rightChar).equals(window.get(rightChar))) {
+                    valid++;
+                }
+            }
+            while (valid == need.size()) {
+                char leftChar = s.charAt(left);
+                if (need.containsKey(leftChar)) {
+                    if (need.get(leftChar).equals(window.get(leftChar))) {
+                        res.add(left);
+                        valid--;
+                    }
+                    window.put(leftChar, window.get(leftChar) - 1);
+                }
+                left++;
+            }
+        }
         return res;
     }
 
-
     /**
-     * 76。最小覆盖子串
+     * 76.最小覆盖子串
      * 1.使用两个map 分别存取 子串need及其 字符串的窗口window，以字符为key, 数量为value
      * 2.使用左右指针，进行窗口的扩大和缩小；使用start strLen保存每次能够更新子串的长度和首索引值;使用valid来表示字符串窗口某元素是否匹配子串窗口
      * 3.遍历right,当need窗口中存在该元素时，则将其加入window窗口,并判定子串中该元素的个数是否与窗口window中的元素个数匹配，匹配则valid++
      * 4.当字符串窗口window中元素种类及个数与子串need窗口完全匹配时，则进行窗口收缩 left++
      * 5.窗口收缩时，当right-left< strLen 则更新 首索引值和 strLen长度
      * 6.当只有window与need不匹配时，才继续扩大窗口；不匹配的条件需要满足：①need窗口包含left元素 ②need窗口与window窗口中的left元素个数相等
-     *   此时还要注意 即使二者不相等时，但need窗口存在该元素，就需要将window窗口的该元素移除，该情况可能是window窗口中有多个left元素
+     * 此时还要注意 即使二者不相等时，但need窗口存在该元素，就需要将window窗口的该元素移除，该情况可能是window窗口中有多个left元素
+     *
      * @param s 字符串 "ADOBECODEBANC"
      * @param t 子串 "ABC"
      * @return "BANC"
      */
-    public  static String minWindow(String s, String t) {
+    public static String minWindow(String s, String t) {
         int sLen = s.length();
         int tLen = t.length();
         String res = "";
