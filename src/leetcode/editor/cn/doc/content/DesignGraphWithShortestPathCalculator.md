@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <p>给你一个有&nbsp;<code>n</code>&nbsp;个节点的&nbsp;<strong>有向带权</strong>&nbsp;图，节点编号为&nbsp;<code>0</code>&nbsp;到&nbsp;<code>n - 1</code>&nbsp;。图中的初始边用数组&nbsp;<code>edges</code>&nbsp;表示，其中&nbsp;<code>edges[i] = [from<sub>i</sub>, to<sub>i</sub>, edgeCost<sub>i</sub>]</code>&nbsp;表示从&nbsp;<code>from<sub>i</sub></code>&nbsp;到&nbsp;<code>to<sub>i</sub></code>&nbsp;有一条代价为&nbsp;<code>edgeCost<sub>i</sub></code>&nbsp;的边。</p>
 
 <p>请你实现一个&nbsp;<code>Graph</code>&nbsp;类：</p>
@@ -31,6 +32,39 @@ g.shortestPath(0, 3); // 返回 6 。从 0 到 3 的最短路径为 0 -&gt; 1 -&
 <p>&nbsp;</p>
 
 <p><strong>提示：</strong></p>
+=======
+<p>There is a <strong>directed weighted</strong> graph that consists of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>. The edges of the graph are initially represented by the given array <code>edges</code> where <code>edges[i] = [from<sub>i</sub>, to<sub>i</sub>, edgeCost<sub>i</sub>]</code> meaning that there is an edge from <code>from<sub>i</sub></code> to <code>to<sub>i</sub></code> with the cost <code>edgeCost<sub>i</sub></code>.</p>
+
+<p>Implement the <code>Graph</code> class:</p>
+
+<ul> 
+ <li><code>Graph(int n, int[][] edges)</code> initializes the object with <code>n</code> nodes and the given edges.</li> 
+ <li><code>addEdge(int[] edge)</code> adds an edge to the list of edges where <code>edge = [from, to, edgeCost]</code>. It is guaranteed that there is no edge between the two nodes before adding this one.</li> 
+ <li><code>int shortestPath(int node1, int node2)</code> returns the <strong>minimum</strong> cost of a path from <code>node1</code> to <code>node2</code>. If no path exists, return <code>-1</code>. The cost of a path is the sum of the costs of the edges in the path.</li> 
+</ul>
+
+<p>&nbsp;</p> 
+<p><strong class="example">Example 1:</strong></p> 
+<img alt="" src="https://assets.leetcode.com/uploads/2023/01/11/graph3drawio-2.png" style="width: 621px; height: 191px;" /> 
+<pre>
+<strong>Input</strong>
+["Graph", "shortestPath", "shortestPath", "addEdge", "shortestPath"]
+[[4, [[0, 2, 5], [0, 1, 2], [1, 2, 1], [3, 0, 3]]], [3, 2], [0, 3], [[1, 3, 4]], [0, 3]]
+<strong>Output</strong>
+[null, 6, -1, null, 6]
+</pre>
+
+<strong>Explanation</strong>
+Graph g = new Graph(4, [[0, 2, 5], [0, 1, 2], [1, 2, 1], [3, 0, 3]]);
+g.shortestPath(3, 2); // return 6. The shortest path from 3 to 2 in the first diagram above is 3 -&gt; 0 -&gt; 1 -&gt; 2 with a total cost of 3 + 2 + 1 = 6.
+g.shortestPath(0, 3); // return -1. There is no path from 0 to 3.
+g.addEdge([1, 3, 4]); // We add an edge from node 1 to node 3, and we get the second diagram above.
+g.shortestPath(0, 3); // return 6. The shortest path from 0 to 3 now is 0 -&gt; 1 -&gt; 3 with a total cost of 2 + 4 = 6.
+</pre>
+
+<p>&nbsp;</p> 
+<p><strong>Constraints:</strong></p>
+>>>>>>> Stashed changes
 
 <ul> 
  <li><code>1 &lt;= n &lt;= 100</code></li> 
@@ -38,9 +72,18 @@ g.shortestPath(0, 3); // 返回 6 。从 0 到 3 的最短路径为 0 -&gt; 1 -&
  <li><code>edges[i].length == edge.length == 3</code></li> 
  <li><code>0 &lt;= from<sub>i</sub>, to<sub>i</sub>, from, to, node1, node2 &lt;= n - 1</code></li> 
  <li><code>1 &lt;= edgeCost<sub>i</sub>, edgeCost &lt;= 10<sup>6</sup></code></li> 
+<<<<<<< Updated upstream
  <li>图中任何时候都不会有重边和自环。</li> 
  <li>调用 <code>addEdge</code>&nbsp;至多&nbsp;<code>100</code>&nbsp;次。</li> 
  <li>调用 <code>shortestPath</code>&nbsp;至多&nbsp;<code>100</code>&nbsp;次。</li> 
 </ul>
 
 <div><div>Related Topics</div><div><li>图</li><li>设计</li><li>最短路</li><li>堆（优先队列）</li></div></div><br><div><li>👍 48</li><li>👎 0</li></div>
+=======
+ <li>There are no repeated edges and no self-loops in the graph at any point.</li> 
+ <li>At most <code>100</code> calls will be made for <code>addEdge</code>.</li> 
+ <li>At most <code>100</code> calls will be made for <code>shortestPath</code>.</li> 
+</ul>
+
+<div><div>Related Topics</div><div><li>图</li><li>设计</li><li>最短路</li><li>堆（优先队列）</li></div></div><br><div><li>👍 31</li><li>👎 0</li></div>
+>>>>>>> Stashed changes
