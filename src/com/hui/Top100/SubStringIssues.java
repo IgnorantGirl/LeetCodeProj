@@ -1,9 +1,6 @@
 package com.hui.Top100;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class SubStringIssures {
+public class SubStringIssues {
 
 
 

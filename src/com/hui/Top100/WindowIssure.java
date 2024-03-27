@@ -54,8 +54,8 @@ public class WindowIssure {
      * 438.找到字符串中所有字母异位词
      * 思想：
      * 1.使用两个map 分别存取 子串need及其 字符串的窗口window，以字符为key, 数量为value
-     * 2.使用左右指针进行对窗口 扩大和缩小 right-扩大；left-缩小
-     * 3.当need与window窗口中元素及其数量都对应上时，则valid++;
+     * 2.使用左右指针，进行窗口的扩大和缩小；收缩条件为：p窗口的大小
+     * 3.当valid为 need窗口大小时，则说明找到字母异位体，故将left加入 结果集中
      *
      * @param s 字符串 "cbaebabacd"
      * @param p 待寻找异位词的字符串 "abc"
@@ -65,11 +65,9 @@ public class WindowIssure {
         List<Integer> res = new ArrayList<>();
         int sLen = s.length();
         int pLen = p.length();
-        if (sLen < pLen) {
-            return res;
-        }
-        Map<Character, Integer> need = new HashMap<>();
+        if (sLen < pLen) return res;
         Map<Character, Integer> window = new HashMap<>();
+        Map<Character, Integer> need = new HashMap<>();
         for (char c : p.toCharArray()) {
             need.put(c, need.getOrDefault(c, 0) + 1);
         }
@@ -85,23 +83,27 @@ public class WindowIssure {
                     valid++;
                 }
             }
-            while (valid == need.size()) {
+
+            // 窗口收缩[窗口大小只是 pLen的长度即可]
+            while (right-left>=pLen) {
+                if(valid == need.size()){
+                    res.add(left);
+                }
                 char leftChar = s.charAt(left);
-                if (need.containsKey(leftChar)) {
+                left++;
+                if(need.containsKey(leftChar)){
                     if (need.get(leftChar).equals(window.get(leftChar))) {
-                        res.add(left);
                         valid--;
                     }
                     window.put(leftChar, window.get(leftChar) - 1);
                 }
-                left++;
             }
         }
         return res;
     }
 
     /**
-     * 76.最小覆盖子串
+     * 76。最小覆盖子串
      * 1.使用两个map 分别存取 子串need及其 字符串的窗口window，以字符为key, 数量为value
      * 2.使用左右指针，进行窗口的扩大和缩小；使用start strLen保存每次能够更新子串的长度和首索引值;使用valid来表示字符串窗口某元素是否匹配子串窗口
      * 3.遍历right,当need窗口中存在该元素时，则将其加入window窗口,并判定子串中该元素的个数是否与窗口window中的元素个数匹配，匹配则valid++
