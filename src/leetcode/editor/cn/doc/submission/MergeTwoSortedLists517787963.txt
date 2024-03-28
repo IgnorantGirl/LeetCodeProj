@@ -1,0 +1,68 @@
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode() {}
+     * ListNode(int val) { this.val = val; }
+     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * }
+     */
+    class Solution {
+        public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+
+            if(list1==null){
+                return list2;
+            }
+
+            if(list2==null){
+                return list1;
+            }
+
+            ListNode curNode1 = list1;
+            ListNode curNode2 = list2;
+            ListNode pre = null;
+            while (curNode1 != null && curNode2 != null) {
+                if (curNode1.val <= curNode2.val) {
+                    pre = curNode1;
+                    curNode1 = curNode1.next;
+                } else {
+                    ListNode temp = curNode2.next;
+                    pre.next = curNode2;
+                    curNode2.next = curNode1;
+                    curNode2 = temp;
+                }
+            }
+            while (curNode2!=null){
+                pre.next = curNode2;
+                pre = pre.next;
+                curNode2 = curNode2.next;
+            }
+            return list1;
+        }
+
+
+    }
+
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+//total_correct:0
+//compile_error:Line 48: error: modifier static not allowed here
+    static class ListNode {
+           ^
