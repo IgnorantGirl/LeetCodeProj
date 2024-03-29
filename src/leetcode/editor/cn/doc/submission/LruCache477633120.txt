@@ -1,0 +1,79 @@
+class LRUCache {
+
+    private static class Node{
+        int k,val;
+        Node next,prev;
+        public Node(int key,int value){
+            this.k = key;
+            this.val = value;
+        }
+    }
+
+    private int capacity;
+    private Node dummy = new Node(0,0);  // 哨兵
+    private Map<Integer,Node> keyToNode = new HashMap<>();
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        // 形成环形链表
+        dummy.prev=dummy;
+        dummy.next = dummy;
+    }
+    
+    public int get(int key) {
+        Node node = getNode(key);
+        return node!=null?node.val:-1;
+    }
+    
+    public void put(int key, int value) {
+         Node node = getNode(key);
+         // 不为null的时候，已经在getNode里面放到了最前面
+         if(node!=null){
+             node.val = value;
+             return;
+         }
+         // 新书
+         Node newNode = new Node(key,value);
+         keyToNode.put(key,newNode);
+         pushFront(newNode); // 放到最前面
+         if(keyToNode.size()>capacity){
+             // 大小超过范围,移除最后一个
+             Node lastNode = dummy.prev;
+             keyToNode.remove(lastNode.k); //从map缓存中移除
+             remove(lastNode);
+         }
+    }
+
+    public Node getNode(int key){
+        // 看 map中是否包含这个key
+        if(!keyToNode.containsKey(key)){
+            return null;
+        }
+        Node node = keyToNode.get(key);
+        // 从当前位置删除，并移动到最前面
+        remove(node);
+        pushFront(node);
+        return node;
+    }
+
+    public void remove(Node x){
+        x.prev.next = x.next;
+        x.next.prev = x.prev;
+    }
+
+    public void pushFront(Node x){
+        x.next = dummy.next;
+        x.prev = dummy.next.prev;
+        dummy.next.prev = x;
+        dummy.next = x;
+
+    }
+}
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
+//runtime:49 ms
+//memory:117.6 MB
