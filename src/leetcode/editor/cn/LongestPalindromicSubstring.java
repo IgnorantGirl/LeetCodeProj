@@ -36,7 +36,7 @@ public class LongestPalindromicSubstring {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
-        public String longestPalindrome1(String s) {
+        public String longestPalindrome(String s) {
             int sLen = s.length();
             int maxLen = 1;
             int len = 0;
@@ -74,7 +74,7 @@ public class LongestPalindromicSubstring {
             return s.substring(start, start + maxLen);
         }
 
-        public String longestPalindrome(String s) {
+        public String longestPalindrome3(String s) {
             int len = s.length();
             boolean[][] dp = new boolean[len][len];
             // dp动态数字比较的是 第l个元素和第r个元素之内的元素是否为回文串
