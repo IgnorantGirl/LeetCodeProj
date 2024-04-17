@@ -54,51 +54,85 @@ package leetcode.editor.cn;
 //
 // Related Topics 栈 树 深度优先搜索 二叉树 👍 1241 👎 0
 
-import java.util.List;
+import java.util.*;
 
-public class BinaryTreePreorderTraversal{
-      public static void main(String[] args) {
-           Solution solution = new BinaryTreePreorderTraversal().new Solution();
-      }
-      //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        return null;
+public class BinaryTreePreorderTraversal {
+    public static void main(String[] args) {
+        Solution solution = new BinaryTreePreorderTraversal().new Solution();
+    }
+    //leetcode submit region begin(Prohibit modification and deletion)
+
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
+     * }
+     */
+    class Solution {
+        List<Integer> res = new ArrayList<>();
+
+        public List<Integer> preorderTraversal11(TreeNode root) {
+            if (root == null) {
+                return res;
+            }
+            res.add(root.val);
+            if (root.left != null) {
+                preorderTraversal11(root.left);
+            }
+            if (root.right != null) {
+                preorderTraversal11(root.right);
+            }
+            return res;
+        }
+        public List<Integer> preorderTraversal(TreeNode root) {
+            List<Integer> result = new ArrayList<>();
+
+            if (root == null) {
+                return result;
+            }
+            LinkedList<TreeNode> stack = new LinkedList<>();
+            stack.push(root);
+            while (!stack.isEmpty()){
+                TreeNode node = stack.pop();
+                result.add(node.val);
+                if(node.right!=null){
+                    stack.push(node.right);
+                }
+                if(node.left!=null){
+                    stack.push(node.left);
+                }
+            }
+            return result;
+        }
+    }
+
+    //leetcode submit region end(Prohibit modification and deletion)
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
 }
-//leetcode submit region end(Prohibit modification and deletion)
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-  }
   
