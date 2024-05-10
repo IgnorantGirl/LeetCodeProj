@@ -1,0 +1,62 @@
+> Problem: [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/)
+
+[TOC]
+
+# 思路
+
+> 迭代参考层序遍历就ok；递归的话很容易，时空复杂度都一样
+
+# 复杂度
+
+时间复杂度:
+
+> $O(n)$
+
+空间复杂度:
+
+> $O(n)$
+
+# Code
+
+## 递归
+
+* []
+
+```C++
+class Solution {
+public:
+
+    int maxDepth(TreeNode* root) {
+        if(!root) return 0;
+        return max(maxDepth(root->left), maxDepth(root->right)) + 1;
+    }
+};
+```
+
+## 迭代
+
+* []
+
+```c++
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        int res = 0;
+        if(!root) return res;
+        queue<TreeNode *> q;
+        q.push(root);
+        while(q.size()){
+            int len = q.size();
+            res ++;
+            while(len --){
+                auto t = q.front();
+                q.pop();
+                if(t->left) q.push(t->left);
+                if(t->right) q.push(t->right);
+            }
+        }
+        return res;
+    }
+};
+```
+

@@ -1,0 +1,135 @@
+> [235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)
+
+[TOC]
+
+# 题目
+
+给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+
+[百度百科](https://baike.baidu.com/item/最近公共祖先/8918834?fr=aladdin)中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（**一个节点也可以是它自己的祖先**）。”
+
+# 题目分析
+
+## 思路分析
+
+这道题咋一看，不就是和[236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/) 是一道题吗？二叉搜索树是一种特殊的二叉树，因此可以直接用 236 题的做法。
+
+但是，仔细一看，既然都说了二叉搜索树是一种特殊的二叉树，那么肯定就有特殊的做法。
+
+## 二分查找
+
+二叉搜索树的特点是 **对于任意一个节点，其左子树的所有值都小于它，其右子树的所有值都大于它。**
+
+根据 [236题的分析](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/solutions/2464132/javapython3chou-xu-bian-li-dong-tai-gui-gtc2v/)，最近公共祖先节点只有以下两种形式：
+
+![image-20240225011425665.png](https://pic.leetcode.cn/1708795303-MgqYbc-image-20240225011425665.png)
+
+因此，如果两个节点 `p` 和 `q` 都小于当前节点值，那么：
+
+1. 两个节点都在其左子树上；
+2. 两个节点的最近公共祖先肯定不为当前节点，肯定也在其左子树上。
+
+如果两个节点 `p` 和 `q` 都大于当前节点值，那么最近公共祖先节点就在当前节点的右子树上。
+
+如果当前节点值属于两个节点值之间，那么当前节点就是最近公共祖先。【可能会疑惑，隶属两个节点值之间就一定是祖先节点吗？不可以是子节点吗？**因为我们是自顶向下查找，如果都访问到子节点了，那么最近祖先节点也一定会被访问到**】
+
+![image-20240225011855411.png](https://pic.leetcode.cn/1708795278-ZCyNSm-image-20240225011855411.png)
+
+# 代码
+
+## 递归法
+
+* []
+
+```Java
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(p.val < root.val && q.val < root.val)
+            return lowestCommonAncestor(root.left, p, q);  // 两个节点值都小于当前节点，则两个节点都在其左子树
+        if(p.val > root.val && q.val > root.val)
+            return lowestCommonAncestor(root.right, p, q); // 两个节点值都大于当前节点，则两个节点都在其右子树
+        return root;    // 否则根节点的值在两个节点之间，必为最近公共祖先
+    }
+}
+```
+
+* []
+
+```Python
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if p.val < root.val and q.val < root.val:
+            return self.lowestCommonAncestor(root.left, p, q)  # 两个节点值都小于当前节点，则两个节点都在其左子树
+        if p.val > root.val and q.val > root.val:
+            return self.lowestCommonAncestor(root.right, p, q) # 两个节点值都大于当前节点，则两个节点都在其右子树
+        return root    # 否则根节点的值在两个节点之间，必为最近公共祖先
+```
+
+* []
+
+```C++
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if(p->val < root->val && q->val < root->val)
+            return lowestCommonAncestor(root->left, p, q);  // 两个节点值都小于当前节点，则两个节点都在其左子树
+        if(p->val > root->val && q->val > root->val)
+            return lowestCommonAncestor(root->right, p, q); // 两个节点值都大于当前节点，则两个节点都在其右子树
+        return root;    // 否则根节点的值在两个节点之间，必为最近公共祖先
+    }
+};
+```
+
+## 迭代法
+
+* []
+
+```Java
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        while(true){
+            if(p.val < root.val && q.val < root.val){
+                root = root.left;      // 两个节点值都小于当前节点，则两个节点都在其左子树，到左子树查找
+            }else if(p.val > root.val && q.val > root.val){
+                root = root.right;     // 两个节点值都大于当前节点，则两个节点都在其右子树，到右子树查找
+            }else{   
+                return root;    // 否则根节点的值在两个节点之间，必为最近公共祖先
+            }
+        }
+    }
+}
+```
+
+* []
+
+```Python
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        while True:     
+            if p.val < root.val and q.val < root.val:
+                root = root.left  # 两个节点值都小于当前节点，则两个节点都在其左子树
+            elif p.val > root.val and q.val > root.val:
+                root = root.right # 两个节点值都大于当前节点，则两个节点都在其右子树
+            else:
+                return root    # 否则根节点的值在两个节点之间，必为最近公共祖先
+```
+
+* []
+
+```C++
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        while(true){
+            if(p->val < root->val && q->val < root->val){
+                root = root->left;      // 两个节点值都小于当前节点，则两个节点都在其左子树，到左子树查找
+            }else if(p->val > root->val && q->val > root->val){
+                root = root->right;     // 两个节点值都大于当前节点，则两个节点都在其右子树，到右子树查找
+            }else{   
+                return root;    // 否则根节点的值在两个节点之间，必为最近公共祖先
+            }
+        }
+    }
+};
+```
+

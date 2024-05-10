@@ -1,0 +1,40 @@
+# 题目
+
+[面试题 04.02. 最小高度树](https://leetcode.cn/problems/minimum-height-tree-lcci/description/)
+
+# 思路
+
+由于题目中的数组 $nums$ 已经排序，并且二叉搜索树的中序遍历结果，就是一个从小到大排序的数组，因此，构造一颗最小高度树的时候，我们可以考虑使用数组 $nums$ 中间的元素作为根节点，这样就可以保证左右子树的高度之差不超过 $1$。
+
+建树的思路：在进入一个节点之前，创建一个节点，并在离开该节点的时候，即后序的位置，对该节点添加左右子树。
+
+# 复杂度
+
+时间复杂度: $O(n)$
+
+空间复杂度: $O(n)$
+
+# 代码实现
+
+* []
+
+```Java
+class Solution {
+    public TreeNode sortedArrayToBST(int[] nums) {
+        return dfs(nums, 0, nums.length - 1);
+    }
+
+    private TreeNode dfs(int [] nums, int left, int right) {
+        if (left > right) {
+            return null;
+        }
+
+        int mid = (left + right + 1) / 2;
+        TreeNode node = new TreeNode(nums[mid]);
+        node.left = dfs(nums, left, mid - 1);
+        node.right = dfs(nums, mid + 1, right);
+        return node;
+    }
+}
+```
+

@@ -48,6 +48,19 @@ public class GenerateParentheses {
             return res;
         }
 
+        public void dfs(int len,int leftCount,int rightCount,String str){
+            if(leftCount == len && rightCount == len){
+                res.add(str);
+                return;
+            }
+            if(leftCount<len){
+                dfs(len,leftCount+1,rightCount,str+'(');
+            }
+            if(rightCount<leftCount){
+                dfs(len,leftCount,rightCount+1,str+')');
+            }
+        }
+
         /**
          * 深度遍历 获取括号组合
          *
@@ -56,7 +69,7 @@ public class GenerateParentheses {
          * @param rightCount 右括号数量
          * @param str        本次遍历组合的字符串
          */
-        public void dfs(int n, int leftCount, int rightCount, String str) {
+        public void dfs1(int n, int leftCount, int rightCount, String str) {
             // 当左括号数量 、右括号数量与 给定的括号数量相同时，则表示遍历出来一个结果
             if (leftCount == n && rightCount == n) {
                 res.add(str);
@@ -64,11 +77,11 @@ public class GenerateParentheses {
             }
             // 当左括号没有达到 括号数量 可以加左括号
             if (leftCount < n) {
-                dfs(n, leftCount + 1, rightCount, str + '(');
+                dfs1(n, leftCount + 1, rightCount, str + '(');
             }
             // 当右括号数量<括号数量, 并且左括号数量大于右括号时，说明可以有左括号与右括号匹配，可以加右括号
             if (rightCount < n && leftCount > rightCount) {
-                dfs(n, leftCount, rightCount + 1, str + ')');
+                dfs1(n, leftCount, rightCount + 1, str + ')');
             }
         }
     }

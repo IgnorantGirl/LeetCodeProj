@@ -45,19 +45,44 @@ package leetcode.editor.cn;
 //
 // Related Topics 数组 回溯 👍 2757 👎 0
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CombinationSum{
-      public static void main(String[] args) {
-           Solution solution = new CombinationSum().new Solution();
-      }
-      //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        return  null;
+public class CombinationSum {
+    public static void main(String[] args) {
+        Solution solution = new CombinationSum().new Solution();
+        int[] nums = {2, 3, 6, 7};
+        List<List<Integer>> res = solution.combinationSum(nums, 7);
+        System.out.println(res.toString());
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        List<List<Integer>> result = new ArrayList<>();
+
+        public List<List<Integer>> combinationSum(int[] candidates, int target) {
+            dfs(candidates,target,0,new ArrayList<>(),0);
+            return result;
+        }
+
+        public void dfs(int[] nums, int target, int sum, List<Integer> list,int depth) {
+            if (sum > target) {
+                return;
+            }
+            if (sum == target) {
+                result.add(new ArrayList<>(list));
+                return;
+            }
+            for (int i=depth;i<nums.length;i++){
+                list.add(nums[i]);
+                sum+=nums[i];
+                dfs(nums,target,sum,list,i);
+                list.remove(list.size()-1);
+                sum-=nums[i];
+            }
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}
   

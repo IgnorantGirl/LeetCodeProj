@@ -1,0 +1,53 @@
+> Problem: [647. 回文子串](https://leetcode.cn/problems/palindromic-substrings/description/)
+
+![image.png](https://pic.leetcode.cn/1711533190-EKQguV-image.png)
+
+# 思路
+
+> 讲述看到这一题的思路
+
+# 解题方法
+
+> 描述你的解题方法
+
+# 复杂度
+
+时间复杂度:
+
+> 添加时间复杂度, 示例： $O(n)$
+
+空间复杂度:
+
+> 添加空间复杂度, 示例： $O(n)$
+
+# Code
+
+* []
+
+```Java
+class Solution {
+    public int countSubstrings(String s) {
+        int cnt=0;
+        for(int i=0;i<s.length();i++){
+            for(int j=i;j<s.length();j++){
+                if(isHui(s,i,j)){
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+    }
+
+    public boolean isHui(String s,int startIndex,int endIndex){
+        while(startIndex<endIndex){
+            if(s.charAt(startIndex)!=s.charAt(endIndex)){
+                return false;
+            }
+            startIndex++;
+            endIndex--;
+        }
+        return true;
+    }
+}
+```
+

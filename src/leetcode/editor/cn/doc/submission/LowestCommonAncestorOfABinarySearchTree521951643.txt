@@ -1,0 +1,33 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // 二叉搜索树的中序遍历是 有序的，根据这一特点，可以比较p、q、root的val的值 确定其在root的哪面
+            // 当p、q在root左右两侧 则返回root 、 当p 、q其中有为root 的 则返回root
+            if(root == null | p == null ||q == null){
+                return null;
+            }
+            if ((p.val <= root.val && q.val >= root.val) ||( p.val >= root.val && q.val <= root.val)) {
+                return root;
+            }
+            TreeNode left = lowestCommonAncestor(root.left, p, q);
+            TreeNode right = lowestCommonAncestor(root.right, p, q);
+            if (left == null) {
+                return right;
+            }
+            if (right == null) {
+                return left;
+            }
+            return root;
+    }
+}
+//runtime:6 ms
+//memory:44 MB

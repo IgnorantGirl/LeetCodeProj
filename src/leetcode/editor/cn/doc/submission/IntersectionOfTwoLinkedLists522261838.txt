@@ -1,0 +1,37 @@
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode(int x) {
+     * val = x;
+     * next = null;
+     * }
+     * }
+     */
+    class Solution {
+        public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+            ListNode h1 = headA;
+            ListNode h2 = headB;
+            while (h1!=null && h2!=null){
+                if(h1 == h2 ){
+                    return h1;
+                }
+                h1 = h1.next!=null? h1.next:headB;
+                h2 = h2.next!=null? h2.next:headA;
+            }
+            return null;
+        }
+    }
+
+
+//runtime:N/A
+//memory:N/A
+//total_testcases:0
+//total_correct:0
+//input_formatted:
+//expected_output:
+//code_output:
+//runtime_error:
+//last_testcase:

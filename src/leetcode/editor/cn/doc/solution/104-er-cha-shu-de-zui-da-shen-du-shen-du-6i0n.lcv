@@ -1,0 +1,55 @@
+### 深度 递归
+
+* swift
+
+```swift
+
+class Solution {
+    func maxDepth(_ root: TreeNode?) -> Int {
+        if root == nil {
+            return 0
+        }
+        return max(maxDepth(root?.left), maxDepth(root?.right)) + 1
+    }
+}
+```
+
+### 广度 数组
+
+数组中每次记录一层的所有节点
+
+* swift
+
+```swift
+func maxDepthGC(_ root: TreeNode?) -> Int {
+    if root == nil {
+        return 0
+    }
+    
+    var list:[TreeNode?] = [root]
+    var sum = 0
+    while list.isEmpty == false {
+        // 统计当前层数的个数
+        var n = list.count
+        // 把当前层数的节点从数组中拿取
+        while n > 0 {
+            let node = list.removeFirst()
+            
+            // 如果有下一层，将下一层放入数组中
+            if node?.left != nil {
+                list.append(node?.left)
+            }
+            
+            if node?.right != nil {
+                list.append(node?.right)
+            }
+            
+            n -= 1
+        }
+        
+        sum += 1        // 增加当前层数
+    }
+    return sum
+}
+```
+

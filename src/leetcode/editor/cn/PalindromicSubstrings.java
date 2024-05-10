@@ -45,7 +45,44 @@ public class PalindromicSubstrings {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public int countSubstrings(String s) {
+            int len = s.length();
+            int res = 0;
+            for (int i = 0; i < len; i++) {
+                // 奇数情况
+                res = helper(i,i,len,res,s);
+                // 偶数情况
+                res = helper(i,i+1,len,res,s);
+            }
+            return res;
+        }
+
+        // 中心扩散
+        public int helper(int i, int j, int n, int res, String str) {
+            while (i >= 0 && j < n) {
+                if (str.charAt(i) != str.charAt(j)) break;
+                res++;
+                i--;
+                j++;
+            }
+            return res;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public int countSubstrings1(String s) {
             int res = 0;
             int n = s.length();
             for (int i = 0; i < n; i++) {

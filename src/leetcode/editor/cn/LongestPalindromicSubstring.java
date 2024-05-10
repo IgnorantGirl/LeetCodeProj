@@ -10,6 +10,27 @@ public class LongestPalindromicSubstring {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
 
+        public String longestPalindrome(String s) {
+            int len = s.length();
+            int[] res = new int[2];
+            for (int i = 0; i < len; i++) {
+                int[] temp = helper(i,i,len,s);
+                int[] temp1 = helper(i,i+1,len,s);
+                if(res[1]-res[0] <temp[1]-temp[0]) res = temp;
+                if(res[1]-res[0] <temp1[1]-temp1[0]) res = temp1;
+            }
+            return s.substring(res[0],res[1]+1);
+        }
+
+        public int[] helper(int i, int j, int n, String str) {
+            while (i >= 0 & j < n) {
+                if (str.charAt(i) != str.charAt(j)) break;
+                i--;
+                j++;
+            }
+            return new int[]{i+1,j-1};
+        }
+
         public String longestPalindrome4(String s) {
             int sLen = s.length();
             int maxLen = 1;
@@ -105,7 +126,7 @@ public class LongestPalindromicSubstring {
             return s.substring(start, start + maxLen);
         }
 
-        public String longestPalindrome(String s) {
+        public String longestPalindrome11(String s) {
             int len = s.length();
             if (len == 0 || len == 1) {
                 return s;

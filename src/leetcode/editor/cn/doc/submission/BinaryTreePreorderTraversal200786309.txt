@@ -1,0 +1,38 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+   // List<Integer>  res = new ArrayList<>();
+    public List<Integer> preorderTraversal(TreeNode root) {  
+        if(root == null) return new ArrayList<>();
+       List<Integer>  res = new ArrayList<>();      
+       Stack<TreeNode> stack = new Stack<>();
+       stack.push(root);//将根节点压入栈
+        while(!stack.isEmpty()){
+            TreeNode temp = stack.pop();//出栈
+            if(temp!=null){
+            res.add(temp.val);        
+            System.out.println(temp.val);   
+            }
+        
+           if(temp.right!=null) {
+                stack.push(temp.right) ;
+            }else{
+
+            }               
+            if(temp.left!=null) {
+               stack.push(temp.left);
+             }        
+          
+            }
+            return res;
+    }
+}
+//runtime:3 ms
+//memory:36.7 MB
