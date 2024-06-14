@@ -28,17 +28,33 @@ package leetcode.editor.cn;
 //
 // Related Topics 位运算 数学 字符串 模拟 👍 1193 👎 0
 
-  public class AddBinary{
-      public static void main(String[] args) {
-           Solution solution = new AddBinary().new Solution();
-      }
-      //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String addBinary(String a, String b) {
-        return "";
+public class AddBinary {
+    public static void main(String[] args) {
+        Solution solution = new AddBinary().new Solution();
+        System.out.println(solution.addBinary("1010", "1011"));
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public String addBinary(String a, String b) {
+            StringBuilder res = new StringBuilder();
+            int aLen = a.length();
+            int bLen = b.length();
+            int flag = 0;
+            for (int i = aLen - 1, j = bLen - 1; i >= 0 || j >= 0; i--, j--) {
+                int sum = flag;
+                sum += i >= 0 ? a.charAt(i) - '0' : 0;
+                sum += j >= 0 ? b.charAt(j) - '0' : 0;
+                res.append(sum % 2);
+                flag = sum / 2;
+            }
+            if (flag == 1) {
+                res.append(1);
+            }
+            return res.reverse().toString();
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}
   

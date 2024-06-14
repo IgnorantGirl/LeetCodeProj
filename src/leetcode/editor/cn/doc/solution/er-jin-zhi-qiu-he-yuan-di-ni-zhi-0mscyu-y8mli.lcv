@@ -1,0 +1,77 @@
+> Problem: [67. 二进制求和](https://leetcode.cn/problems/add-binary/description/)
+
+[TOC]
+
+# 思路
+
+> 讲述看到这一题的思路
+
+# 解题方法
+
+> 原地逆置a和b，并且找到长度最大值，len等于长度最大值加2，存储可能的进位，以及末尾的‘\0’。最后逐个计算每一位的数值，如果有进位，flag就变为1。最后给字符串加上结束符，再原地逆置‘\0’前面的元素即可。
+
+# 复杂度
+
+时间复杂度:
+
+> O(n)
+
+空间复杂度:
+
+> O(n)
+
+# Code
+
+* []
+
+```C
+void FZ(char *a,int len){    //反转字符串
+    int i;
+    char tmp;
+    for(i=0;i<len/2;i++){
+        tmp=a[i];
+        a[i]=a[len-i-1];
+        a[len-i-1]=tmp;
+    }
+}
+
+
+char* addBinary(char* a, char* b) {
+    int len_a=strlen(a);
+    int len_b=strlen(b);
+    int len=fmax(len_a,len_b)+2;
+    char *result=(char*)malloc(sizeof(char)*len);
+    
+    FZ(a,len_a);
+    FZ(b,len_b);
+
+    int i;
+    int flag=0;   //进位符
+    for(i=0;i<len-2;i++){
+        int tmp;
+        if(i<len_a&&i<len_b){
+            tmp=(a[i]-'0')+(b[i]-'0')+flag;
+            result[i]=tmp%2+'0';
+            flag=tmp/2;
+        }else if(i<len_a){
+            tmp=(a[i]-'0')+flag;
+            result[i]=tmp%2+'0';
+            flag=tmp/2;
+        }else{
+            tmp=(b[i]-'0')+flag;
+            result[i]=tmp%2+'0';
+            flag=tmp/2;
+        }
+    }
+    if(flag==1){
+        result[len-2]='1';
+    }else{
+        len--;
+    }
+    result[len-1]='\0';   //结束符
+    FZ(result,len-1);
+    return result;
+    
+}
+```
+

@@ -1,0 +1,86 @@
+> Problem: [67. 二进制求和](https://leetcode.cn/problems/add-binary/description/)
+
+[TOC]
+
+# 思路
+
+> 各个进制通用，只需改变ary的值
+> 小学算术思维，两数从后往前逐列计算
+> 计算时，脑子里想每一列的计算结果，进位值写在横线上小小的
+> 什么时候出结果：两个数都必须算过最前端的一位，且不再进位，若有进位则最前+1
+
+* tips:使用String拼接是为了方便理解，完全贴合算数模式，性能很差，若想提高性能，使用注释掉的StringBuilder或StringBuffer
+
+# 解题方法
+
+> i,j就是从后往前逐列看的下标
+> 循环结束条件：i>=0||j>=0(两数所有位都处理结束)，且carry==0(无额外进位值)
+> (为增加可读性，代码中写为i>=0 || j>=0 || carry>0，逻辑一致)
+> 当i或j<0时，就是那个对应的数计算完了，就对我们脑子里想的tmp没影响，不做任何处理，也可以理解为加了个0。
+> 求余--计算该列留位数
+> 除以进制数--机算进位数ary
+
+* tips:使用String拼接是为了方便理解，完全贴合算数模式，性能很差，若想提高性能，使用注释掉的StringBuilder或StringBuffer
+
+# 复杂度
+
+时间复杂度:
+
+> O(n)
+
+空间复杂度:
+
+> O(1)
+
+# Code
+
+* []
+
+```Java
+class Solution {
+    /**
+     * 各个进制通用，只需改变ary的值
+     * 小学算术思维，两数逐位相加
+     * 什么时候出结果：两个数都必须算过最前端的一位，且不再进位，若有进位则最前+1
+     * 即循环结束条件：i>=0||j>=0，且carry==0，为增加可读性，代码中写为i>=0 || j>=0 || carry>0，逻辑一致
+     * 
+     * tips:使用String拼接是为了方便理解，性能很差，若想提高性能，使用注释掉的StringBuilder或StringBuffer
+     */
+    /**
+     * 画个图
+     *    9999         09999
+     * +   999         00999
+     *                (11110)  （进位虚拟行）
+     *   ———————       ———————  
+     * = 10998       = 10998
+     * (每次计算的虚拟值tmp分别为 1[(carry=1)], 10[(carry=1)+(a=9)], 19[(carry=1)+(a=9)+(b=9)], 19, 18)
+     */ 
+    public String addBinary(String a, String b) {
+        int ary = 2;//二进制
+        int lenA = a.length(), lenB = b.length();
+        int maxLen = Math.max(lenA, lenB);
+        int carry = 0;//进位--标注在横线上的小字
+        String res = "";//为了完全符合小学算术，性能很差但方便理解
+        // StringBuffer res = new StringBuffer();//性能好
+        // StringBuilder res = new StringBuilder();//不安全但更快
+        int i=lenA-1, j=lenB-1;
+        while (i>=0 || j>=0 || carry>0) {
+            int tmp = carry;
+            if (i >= 0) {//数字不到"最前端"就一直处理
+                tmp += a.charAt(i) - '0';//char类型减去'0'转化为数字(ASCII知识点),加上a对应位数的数字
+                --i;//向前进一位
+            }
+            if (j >= 0) {
+                tmp += b.charAt(j) - '0';
+                --j;
+            }
+            // res.append(tmp%ary);
+            res = tmp%ary + res;//加法横线下边的数字“拼接”
+            carry = tmp/ary;//进位--标注在横线上的小字
+        }
+        // return res.reverse().toString();
+        return res;
+    }
+}
+```
+

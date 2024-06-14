@@ -1,0 +1,107 @@
+#### 思路
+
+- 同步地遍历两棵树上的节点，直接在 t1 上修改。
+
+> **如果把 mergeTrees 函数作为递归函数，参数 t1 和 t2 是指：当前遍历的节点（子树）**
+
+#### 递归。总是关注当前节点
+
+- $t1$ 为 null 、$t2$ 不是 null，$t1$ 换成 $t2$ 。（`return t2`）
+- $t2$ 为 null、$t1$ 不是 null，$t1$ 依然 $t1$ 。（`return t1`）
+- $t1$ 和 $t2$ 都为 null，$t1$ 依然 $t1$。（`return t1`）
+- $t1$、$t2$ 都存在，将 $t2$ 的值加给 $t1$ 。（`t1.val += t2.val`）
+
+『子树的合并』交给递归去做，它会对每一个节点做同样的事情。
+
+* js
+
+```js
+t1.left = mergeTrees(t1.left, t2.left);
+t1.right = mergeTrees(t1.right, t2.right);
+```
+
+![image.png](https://pic.leetcode-cn.com/1600828469-FbXAmS-image.png)
+
+#### 
+
+#### 代码
+
+时间复杂度我觉得是：$O(N)$，N 是 t1 和 t2 重合后的节点的个数（并集）。
+
+* []
+
+```js
+const mergeTrees = (t1, t2) => {
+  if (t1 == null && t2) {
+    return t2;
+  }
+  if ((t1 && t2 == null) || (t1 == null && t2 == null)) {
+    return t1;
+  }
+  t1.val += t2.val;
+
+  t1.left = mergeTrees(t1.left, t2.left);
+  t1.right = mergeTrees(t1.right, t2.right);
+
+  return t1;
+};
+```
+
+* []
+
+```go
+func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
+	if t1 == nil && t2 != nil {
+		return t2
+	}
+	if (t1 != nil && t2 == nil) || (t1 == nil && t2 == nil) {
+		return t1
+	}
+	t1.Val += t2.Val
+	t1.Left = mergeTrees(t1.Left, t2.Left)
+	t1.Right = mergeTrees(t1.Right, t2.Right)
+	return t1
+}
+```
+
+#### 如果不在原树修改，新建一个树呢？
+
+* []
+
+```js
+const mergeTrees = (t1, t2) => {
+  if (t1 == null && t2) {
+    return t2;
+  }
+  if ((t1 && t2 == null) || (t1 == null && t2 == null)) {
+    return t1;
+  }
+  const root=new TreeNode(t1.val + t2.val)
+
+  root.left = mergeTrees(t1.left, t2.left);
+  root.right = mergeTrees(t1.right, t2.right);
+
+  return root;
+};
+```
+
+* []
+
+```go
+func mergeTrees(t1 *TreeNode, t2 *TreeNode) *TreeNode {
+	if t1 == nil && t2 != nil {
+		return t2
+	}
+	if (t1 != nil && t2 == nil) || (t1 == nil && t2 == nil) {
+		return t1
+	}
+	t := &TreeNode{Val: t1.Val + t2.Val}
+
+	t.Left = mergeTrees(t1.Left, t2.Left)
+	t.Right = mergeTrees(t1.Right, t2.Right)
+	return t
+}
+```
+
+#### 感谢阅读，喜欢的就给个赞鼓励一波
+

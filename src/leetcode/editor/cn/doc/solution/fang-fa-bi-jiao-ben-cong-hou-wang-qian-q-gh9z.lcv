@@ -1,0 +1,77 @@
+> Problem: [67. 二进制求和](https://leetcode.cn/problems/add-binary/description/)
+
+[TOC]
+
+# 思路
+
+> 讲述看到这一题的思路
+
+# 解题方法
+
+> 描述你的解题方法
+
+# 复杂度
+
+时间复杂度:
+
+> 添加时间复杂度, 示例： $O(n)$
+
+空间复杂度:
+
+> 添加空间复杂度, 示例： $O(n)$
+
+# Code
+
+* []
+
+```C++
+class Solution {
+public:
+    string addBinary(string a, string b) {
+        string s;
+        int i = a.size()-1, j = b.size()-1;
+        int m = 0;
+        while((i>=0) && (j>=0)){
+            //初始化m=0！
+            if(((int)(a[i]-'0')+ (int)(b[j]-'0')+ m) == 3){
+                s = s + '1'; m=1; i--; j--;
+            }
+            else if(((int)(a[i]-'0')+ (int)(b[j]-'0')+ m) == 2){
+                s = s + '0'; m=1; i--; j--;
+            }
+            else if(((int)(a[i]-'0')+ (int)(b[j]-'0')+ m) == 1){
+                s = s + '1'; m=0; i--; j--;
+            }
+            else{
+                s = s + '0'; m=0; i--; j--;
+            }
+        }
+        //如果i、j都为-1说明两个字符串一样长，此时最后计算的m直接进来
+        if((i==-1)&&(j==-1)&&(m!=0)) s = s + (char)(m + '0');
+        //i=-1,但是j!=-1,说明a字符串短些
+        if((i==-1)&&(j!=-1)){
+            while(j>=0){
+            if((int)(b[j]-'0') + m == 2){s = s + '0'; m=1; j--;}
+             else if((int)(b[j]-'0') + m == 1){s = s + '1'; m=0; j--;}
+              else {s = s + '0'; m=0; j--;}
+            }
+            if(m==1) s.push_back('1');
+        }
+         if((i!=-1)&&(j==-1)){
+            while(i>=0){
+            if((int)(a[i]-'0') + m == 2){s = s + '0'; m=1; i--;}
+             else if((int)(a[i]-'0') + m == 1){s = s + '1'; m=0; i--;}
+              else {s = s + '0'; m=0; i--;}
+            }
+            if(m==1) s.push_back('1');
+        }
+        //因为我们是逆序加法，现在将s逆转
+        char c;
+        for(int x=0;x<s.size() /2 ;x++){
+            c=s[x];s[x]=s[s.size()-x-1];s[s.size()-x-1]=c;
+        }
+        return s;
+    }
+};
+```
+

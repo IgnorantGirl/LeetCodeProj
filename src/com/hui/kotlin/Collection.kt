@@ -15,6 +15,11 @@ fun main() {
     list1.add("Python")
     for (fruit in list1)
         println(fruit)
+    // += 相当于添加一个元素 -= 删除一个元素
+    list1 += "Kotlin"
+    list1 -= "C++"
+    // 直接赋值
+    list1[0] = "JavaJavaScript"
 
     // 2.set 去重
     val set = setOf("Apple", "Apple", "Orange")
@@ -38,6 +43,8 @@ fun main() {
     for ((fruit, number) in map1) {
         println("fruit is $fruit, number is $number.")
     }
+    // 数组的方式取值
+    println(map1["Apple"])
     // 4.lambda表达式  maxBy函数中 参数为lambda表达式  当Lambda参数是最后一个参数时，可以将其移到函数括号外面
     var maxLengthFruit = list.maxBy() { fruit -> fruit.length }
     // 当Lambda参数是函数的唯一一个参数时，则函数的括号可以省略
@@ -63,6 +70,23 @@ fun main() {
     // 6.java函数式api使用
     Thread { Runnable { println("Thread is Running!") } }.start()
     // 继续简化
-    Thread {  println("Thread is Running1111!")  }.start()
+    Thread { println("Thread is Running1111!") }.start()
+
+    // pair 键值对
+    val maps = mutableMapOf("name" to "zhangsan", "age" to 20)
+    val pair = "Hello" to "Kotlin"
+    val pair2  = Pair("Hello","Pair")
+    val first = pair.first
+    val second = pair.second
+    // 解构
+    val (x,y) = pair
+
+    // triple
+    val triple = Triple("x",2,3.0)
+    val first1 = triple.first
+    val second1 = triple.second
+    val third1 = triple.third
+    // 解构
+    val (x1,y1,z1) = triple
 
 }

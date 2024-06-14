@@ -4,19 +4,69 @@ import kotlin.math.max
 
 fun main() {
     val a = "1235"  // val 对应 final
-    var b:Int = 50  // 显示指出变量类型
+    var b = 50  // 显示指出变量类型
 
     // a = a*10   // 报错：Val cannot be reassigned
     b *= 20
     println("a=$a")
-    println("b="+b)
+    println("b=" + b)
     println("Hello, world!!!")
-    println(largerNumber1(3,4))
-    println(largerNumber3(3,4))
-    println(largerNumber4(3,4))
+    println(largerNumber1(3, 4))
+    println(largerNumber3(3, 4))
+    println(largerNumber4(3, 4))
 
     checkNumber(20)
     forCycle()
+
+    val k = "Today"
+    val m = String("Today".toCharArray())
+    println(k === m)  // 比较引用
+    println(k == m)   // 比较内容
+
+    // 数组
+    val c0 = intArrayOf(1, 2, 3, 4, 5)
+    val c1 = IntArray(5) { 3 * (it + 1) }
+    println(c0.contentToString())
+    println(c1.contentToString())
+
+    val e = floatArrayOf(1f, 3f, 5f, 7f)
+
+    e.forEach { i -> println(i) }
+    for (i in e) {
+        println(i)
+    }
+
+    val e2 = intArrayOf(1, 2, 3)
+    if (1 in e2) {
+        // 如果1f在e2中
+        println("1 is in e2")
+    }
+    if (5 !in e2) {
+        println("5 is not in e2")
+    }
+
+    for (i in e2.indices){
+        print(i)
+    }
+
+    // 区间
+    // 闭区间
+    val intRange = 1..10 //[1-2] 不连续的范围 离散的点
+    val charRange = 'a'..'z'
+    // 左闭右开
+    val intRangeExclusive = 1 until 10
+    // 倒序区间
+    val longRangeReverse = 100L downTo 1L
+    //  步长
+    val intRangeStep = 1..100 step 2
+
+    val floatRange = 1f..2f // [1-2]连续的范围 线 ，不能加步长
+
+    val doubleRange = 2.0..10.0
+    // 打印点
+    println(intRange.joinToString())  // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    // 打印线
+    println(floatRange.toString()) //  1.0..2.0
 }
 
 fun largerNumber(nums1:Int, nums2:Int):Int{
