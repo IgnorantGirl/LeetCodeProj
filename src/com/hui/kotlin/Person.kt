@@ -1,5 +1,7 @@
 package com.hui.kotlin
 
+import java.io.File
+
 // 在kotlin中 非抽象类默认是不能被继承的 需要使用open关键字
 open class Person(val name: String, var age: Int) {
 
@@ -45,5 +47,17 @@ fun main() {
     println(personsTest.size)
 
     val value = "HelloWorld"
+
+
+    // 测试let、run、also、apply函数
+    val personTest = Person("ben",22)
+    personTest.let(::println)
+    personTest.run(::println)
+
+    File("build.gradle").inputStream().reader().buffered()
+        .use {
+            println(it.readLines())
+        }
+
 }
 

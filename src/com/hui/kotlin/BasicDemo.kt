@@ -3,6 +3,14 @@ package com.hui.kotlin
 import kotlin.math.max
 
 fun main() {
+    val title = "短剧|哈哈|合集   "
+    val titleArray = title
+        ?.split("|")
+        ?.takeIf {  it.size == 3}
+        ?.last()
+        ?.trim()
+    println(titleArray)
+
     val a = "1235"  // val 对应 final
     var b = 50  // 显示指出变量类型
 

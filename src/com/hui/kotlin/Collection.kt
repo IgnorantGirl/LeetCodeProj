@@ -75,18 +75,59 @@ fun main() {
     // pair 键值对
     val maps = mutableMapOf("name" to "zhangsan", "age" to 20)
     val pair = "Hello" to "Kotlin"
-    val pair2  = Pair("Hello","Pair")
+    val pair2 = Pair("Hello", "Pair")
     val first = pair.first
     val second = pair.second
     // 解构
-    val (x,y) = pair
+    val (x, y) = pair
 
     // triple
-    val triple = Triple("x",2,3.0)
+    val triple = Triple("x", 2, 3.0)
     val first1 = triple.first
     val second1 = triple.second
     val third1 = triple.third
     // 解构
-    val (x1,y1,z1) = triple
+    val (x1, y1, z1) = triple
 
+    val listNum = listOf(1, 2, 3, 4)
+    listNum.flatMap {
+        0 until it
+    }.joinToString().let(::println)
+
+    val foldStr =  listNum.fold(StringBuilder()){
+        acc,i->acc.append(i)
+    }
+    println(foldStr)
+
+    val temp = listOf(x,y)
+    val t = listNum.fold(temp){
+        temp,i->
+        listOf((temp+i).toString())
+    }
+    t.forEach{
+        println("test+$it")
+    }
+
+    listNum.asSequence().filter {
+        println("filter:$it")
+        it % 2 == 0
+    }.map {
+        println("map:$it")
+        it * 2 + 1
+    }
+
+    listNum.filter {
+        println("filter:$it")
+        it % 2 == 0
+    }.map {
+        println("map:$it")
+        it * 2 + 1
+    }
+
+
+
+    val listNum1 = listOf(1, 2, 3, 4)
+    val listChar = listOf('a', 'b', 'c', 'd') // 假设的第二个列表
+    val zippedList = listNum1.zip(listChar) { num, char -> "$num$char" } // 使用lambda表达式转换Pair为字符串
+    println(zippedList) // 输出: [1a, 2b, 3c, 4d]
 }
