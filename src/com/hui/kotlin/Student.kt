@@ -4,7 +4,9 @@ package com.hui.kotlin
 // 可以显式在定义中指明参数
 // 注意：Person() 中的括号 是为了 指明 子类调用父类的哪个构造函数，括号()不可省略
 // 并且此时的name age的类型范围会自动转成 父类中所定义，无需再定义
-class Student(val sno: String, val grade: Int, name: String, age: Int) : Person(name, age), Study {
+class Student
+@JvmOverloads
+constructor(val sno: String, val grade: Int, name: String, age: Int = -1) : Person(name, age), Study {
     init {
         println(" sno is $sno")
         println(" grade is $grade")
@@ -32,6 +34,10 @@ fun main() {
     var s = Student("1", 2, "hhaa", 13)
     s.eat()
     doStudy(study = s) //键值对的形式 传参数
+
+    var student = Student("", 2, "")
+    var student1 = Student("", 2, "", 3)
+
 }
 
 // 可空类型系统：参数类型旁边加?  如 study:Study?
