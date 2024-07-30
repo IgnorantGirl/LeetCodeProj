@@ -1,199 +1,26 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-ext {
-    supportLibraryVersion = "${SUPPORT_V7_VERSION}"
-    glideVersion = "${GLIDE_VERSION}"
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
-apply from: "config.gradle"
+group = 'org.example'
+version = '1.0-SNAPSHOT'
 
-buildscript {
-    repositories {
-        // 配置目前私有库所在的位置
-        maven { url 'http://maven.applib.baidu-int.com:8681/repository/applib-public/' }
-        maven { url 'http://maven.mbd.baidu.com:8666/repository/haokan-release/' }
-        maven { url 'http://maven.mbd.baidu.com:8666/repository/searchbox/' }
-        maven { url 'http://maven.mbd.baidu.com:8666/repository/searchbox-snapshot/' }
-
-        // apk_optimizer_gradle_plugin 插件的仓库
-        maven { url 'https://matrix.baidu-int.com/nexus/repository/direct/' }
-
-        // 公司内网maven仓库  设置了developer.huawei等外部仓库的代理
-        maven { url 'http://maven.baidu-int.com/nexus/content/groups/public/' }
-        // gradle插件仓库
-        maven { url 'https://plugins.gradle.org/m2/' }
-
-        // 华为hms 配置HMS Core SDK的Maven仓地址。
-        // maven {url 'https://developer.huawei.com/repo/'}
-        maven { url 'http://maven.mbd.baidu.com:8666/repository/modules-debug/' }
-
-        maven { setUrl("https://artifact.bytedance.com/repository/byteX/") }
-
-        google()
-        mavenCentral()
-        mavenLocal()
-        jcenter()
-    }
-    dependencies {
-        classpath "com.baidu.pyramid.res-tools:rr:1.0.1"
-        classpath "com.android.tools.build:gradle:${ANDROID_GRADLE_PLUGIN_VERSION}"
-        classpath "com.bytedance.android.byteX:base-plugin:0.3.0"
-        classpath "io.github.knight-zxw:lancet-plugin:0.0.7"
-//        classpath 'lancet:lancet-plugin:11.1.1'
-        // hook 大法
-        // classpath 'com.lishaokai:lancet-plugin:1.0.16'
-        // hotfix remove
-        // hotfix - titan plugin
-        classpath "com.baidu.titan.build:titan-plugin:${TITAN_PLUGIN_VERSION}"
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-//        classpath "com.baidu.pyramid:rr:0.7.8"
-//        classpath 'qec.xray.plugin:plugin:4.3'
-
-        // EasyBox 插件
-        classpath "com.baidu.easybox:easybox-gradle-plugin:${EASYBOX_PLUGIN_VERSION}"
-        // 升级AndResGuard到1.2.20，修复 项目升级到AGP 4.1之后，
-        // whitelist中的资源同样会被混淆并能在mapping日志文件中找到混淆的记录 的问题
-        // 见 https://github.com/shwenzhang/AndResGuard/releases/tag/1.2.20
-        classpath 'com.tencent.mm:AndResGuard-gradle-plugin:1.2.20'
-        classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
-        // 小程序框架引入
-        // kotlin
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${KOTLIN_VERSION}"
-
-        // 编译注入，仅仅在application中使用（apply plugin: 'com.baidu.pyramid.di'）
-//        classpath "com.baidu.pyramid:di-gradle-plugin:${PYRAMID_PLUGIN_VERSION}"
-        // scheme收集器，每个有描述表的module需要使用（宿主主要关心extension所在的module 需要apply plugin: 'com.baidu.pyramid.generate-scheme-class'）
-//        classpath "com.baidu.pyramid:generate-scheme-class:0.8.71"
-        // scheme汇总，仅仅在application中使用（apply plugin: 'com.baidu.pyramid.scheme-classify'）
-//        classpath "com.baidu.pyramid:scheme-classify:0.8.71"
-
-//        classpath "com.baidu.pyramid:remote-config:${REMOTE_CONFIG_PLUGIN_VERSION}"
-        classpath "com.baidu.pyramid:di-gradle-plugin:${PYRAMID_PLUGIN_VERSION}"
-        classpath "com.baidu.pyramid:service-gradle-plugin:${PYRAMID_PLUGIN_VERSION}"
-        classpath "com.baidu.pyramid:generate-scheme-class:${COMPONENT_PLUGIN_VERSION}"
-        classpath "com.baidu.pyramid.scheme:scheme-classify:${PYRAMID_SCHEME_PLUGIN_VERSION}"
-        classpath "com.baidu.pyramid.component:remote-config:${REMOTE_CONFIG_PLUGIN_VERSION}"
-        classpath "com.baidu.pyramid:rr:${PYRAMID_RR_PLUGIN_VERSION}"
-        // Feed提供的处理LogEx的编译时插件，可以在release中移除Log
-        classpath "com.baidu.searchbox.feed:CustomCompiler:${CUSTOM_COMPILER_PLUGIN_VERSION}"
-        classpath "com.baidu.nps:nps-gradle-plugin:1.0.0.54"
-        // 华为hms
-        classpath "com.huawei.agconnect:agcp:${HMS_AGCP_VERSION}"
-        // 签名
-        classpath 'com.baidu.signer:apk-signer:1.0.4'
-
-        // dex包体积优化 http://agroup.baidu.com/share/md/878dfb6b27944dbcb5cf0f853fcde7a5
-        classpath "com.baidu.perftools:dex-opt:${DEX_OPT_PLUGIN_VERSION}"
-        classpath "com.baidu.perftool:access-inline-plugin:${INLINE_PLUGIN_VERSION}"
-        classpath "com.baidu.perftool:getter-setter-inline-plugin:${INLINE_PLUGIN_VERSION}"
-
-        // 资源优化工具
-        classpath "com.baidu.perftools:res-opt:${RES_OPT_PLUGIN_VERSION}"
-
-        // Tekes 插件
-        classpath "com.baidu.tekes:print-api:${TEKES_PLUGIN_VERSION}"
-
-        // 依赖的systrace gradlew编译插件
-        // http://tekes.baidu-int.com/docs-v2/#/references/topics/performance/public/perftools/systrace/systrace_access
-        classpath "com.baidu.systrace:systrace-gradle-plugin:${SYSTRACE_VERSION}"
-
-        // Lite安装包精简插件
-        classpath "com.baidu.plugin:apk_optimizer_gradle_plugin:${AOGP_VERSION}"
-
-        classpath "com.baidu.haokan.codestat:plugin:${CODESTAT_PLUGIN_VERSION}"
-        classpath "com.baidu.haokan.lint:plugin:${HAOKAN_LINT_PLUGIN}"
-
-        classpath ("com.tencent.matrix:matrix-gradle-plugin:${MATRIX_VERSION}") { changing = true }
-        classpath 'com.baidu.searchbox.aopdebug:aopdebug:1.2.11'
-
-        classpath 'com.smallsoho.mobcase:McImage:1.5.1'
-        // 增加调用链插件
-        classpath "com.baidu.wbox.appdepict:droidnet:${DROIDNET_VERSION}"
-
-    }
+repositories {
+    mavenCentral()
+    mavenLocal()
 }
 
-allprojects {
-    apply plugin: 'com.baidu.easybox.maven-config'
-    easyBoxRepositories {
-        maven {
-            url 'http://maven.applib.baidu-int.com:8681/repository/applib-public/'
-        }
-        maven {
-            url 'http://maven.mbd.baidu.com:8666/repository/component-release/'
-            username "hankan_read_username"
-            password "hankan_read_password"
-        }
-        maven {
-            url 'http://maven.mbd.baidu.com:8666/repository/component-debug/'
-            username "hankan_read_username"
-            password "hankan_read_password"
-        }
-        maven {
-            url 'http://maven.mbd.baidu.com:8666/repository/haokan-release/'
-            username "hankan_read_username"
-            password "hankan_read_password"
-        }
-    }
-
-    repositories {
-        google()
-        // 极速版maven仓库，极速版变体talos下载使用
-        maven { url 'https://matrix.baidu-int.com/nexus/repository/direct/' }
-        maven { url 'http://maven.mbd.baidu.com:8666/repository/haokan-release/' }
-        maven { url 'http://maven.applib.baidu-int.com:8681/repository/applib-public/' }
-        maven { url 'http://maven.mbd.baidu.com:8666/repository/third-party/' }
-        maven { url 'http://maven.baidu-int.com/nexus/content/groups/public/' }
-        maven { url 'https://jitpack.io' }
-        maven { url "http://maven.baidu-int.com/nexus/content/groups/public" }
-        maven { url 'http://maven.mbd.baidu.com:8666/repository/searchbox-snapshot/' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'http://maven.baidu-int.com/nexus/content/repositories/developer/' }
-        maven { url 'http://maven.mbd.baidu.com:8666/repository/modules-debug/' }
-        // 华为hms 配置HMS Core SDK的Maven仓地址。
-        maven { url 'https://developer.huawei.com/repo/' }
-        mavenCentral()
-        jcenter()
-    }
-    apply plugin: 'com.baidu.easybox.module-publish'
-    apply plugin: 'com.baidu.easybox.compile-check-extensions'
-    apply plugin: 'com.baidu.easybox.lint'
-    apply plugin: 'com.baidu.tekes.print-api'
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
 }
 
-// maven发布错误提示
-apply plugin: 'com.baidu.easybox.maven-publish-error-tips'
-apply plugin: 'com.baidu.pyramid.stableapi'
-
-// Define versions in a single place
-ext {
-    // Sdk and tools
-    minSdkVersion = MIN_SDK_VERSION.toInteger()
-    libraryMinSdkVersion = LIBRARY_MIN_SDK_VERSION.toInteger()
-    targetSdkVersion = TARGET_SDK_VERSION.toInteger()
-    compileSdkVersion = COMPILE_SDK_VERSION.toInteger()
-    buildToolsVersion = "${BUILD_TOOLS_VERSION}"
-    versionCode = getVersionCode("${VERSION_NAME}")
-    versionName = "${VERSION_NAME}"
+test {
+    useJUnitPlatform()
 }
-
-/**
- * 计算version code，与四位版本号对应，versionName的前三位作为versionCode的前三位
- * versionName的最后一位除10取整作为verionCode的最后一位
- *
- * @param versionName 四位版本号
- * @return versionCode
- */
-def int getVersionCode(String versionName) {
-    String[] strs = java.util.regex.Pattern.compile("\\.").split(versionName)
-
-    int a = java.lang.Integer.parseInt(strs[0])
-    int b = java.lang.Integer.parseInt(strs[1])
-    int c = java.lang.Integer.parseInt(strs[2])
-    int d = java.lang.Integer.parseInt(strs[3]) / 10
-    if (b > 99 || c > 99) {
-        throw new GradleException("wrong version name!")
-    }
-
-    return (int) (a * 100000 + b * 1000 + c * 10 + d)
+kotlin {
+    jvmToolchain(11)
 }

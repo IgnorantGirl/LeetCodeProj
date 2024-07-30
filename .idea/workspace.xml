@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a446ea25-97ee-4c90-9a00-fb0b986727a2" name="Changes" comment="【】Kotlin学习 泛型">
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/JavaReflections.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/KotlinReflections.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Features/LambdaDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Features/LambdaDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Features/OptionalDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Features/OptionalDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Features/StreamDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Features/StreamDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Offer/CopyRandomList35.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Offer/CopyRandomList35.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Offer/Exchange21.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Offer/Exchange21.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Offer/FindNthDigit44.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Offer/FindNthDigit44.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Offer/LastRemaining62.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Offer/LastRemaining62.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Offer/LevelOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Offer/LevelOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Offer/StrToInt67.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Offer/StrToInt67.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Sorts/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Sorts/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Sorts/ThreeNodeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Sorts/ThreeNodeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/BackTracking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/BackTracking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/Calculate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/Calculate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/DetectCycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/DetectCycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/DoublePointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/DoublePointer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/FirstMissingPositive41.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/FirstMissingPositive41.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/LRUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/LRUCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/ListNodeIssues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/ListNodeIssues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/MapIssues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/MapIssues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/MatrixIssures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/MatrixIssures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/MaxSlidingWindow239.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/MaxSlidingWindow239.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/SubStringIssues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/SubStringIssues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/TreeNodeIssues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/TreeNodeIssues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/WindowIssure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/WindowIssure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top100/merge56.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top100/merge56.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/CanConstruct383.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/CanConstruct383.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Candy135.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Candy135.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/ConvertN6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/ConvertN6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/FindFirstStr28.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/FindFirstStr28.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/FindSubstring30.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/FindSubstring30.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/FullJustify68.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/FullJustify68.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/GasStation134.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/GasStation134.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/GroupWords49.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/GroupWords49.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/HappySum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/HappySum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/IsAnagram242.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/IsAnagram242.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/JumpGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/JumpGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Longest128.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Longest128.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/LongestSubString3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/LongestSubString3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/MaxArea11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/MaxArea11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/MinWindow76.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/MinWindow76.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Palindrome125.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Palindrome125.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Prefix14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Prefix14.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Rain42.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Rain42.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/RandomizaedSet380.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/RandomizaedSet380.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/ReverseWords151.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/ReverseWords151.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Roman12_13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Roman12_13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Rotate48.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Rotate48.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/SpiralOrder54.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/SpiralOrder54.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/SubArrayLen209.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/SubArrayLen209.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Subsequence392.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Subsequence392.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/ThreeSum15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/ThreeSum15.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/TwoSum167.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/TwoSum167.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/ValidSudo36.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/ValidSudo36.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/WordPattern290.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/WordPattern290.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top150/Zeros73.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top150/Zeros73.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/CloseStrings1657.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/CloseStrings1657.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/DeleteMiddle2095.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/DeleteMiddle2095.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/Dota2_649.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/Dota2_649.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/EqualPairs2352.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/EqualPairs2352.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/FindDifference2215.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/FindDifference2215.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/OddEvenList328.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/OddEvenList328.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/PairSum2130.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/PairSum2130.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/RecentCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/RecentCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/ReverseList206.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/ReverseList206.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/Top75/UniqueOccurrences1207.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/Top75/UniqueOccurrences1207.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/atomic/AtomicDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/atomic/AtomicDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/designmode/SimpleFactoryDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/designmode/SimpleFactoryDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/BasicDemo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/BasicDemo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/Book.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/Book.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/BoxInt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/BoxInt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/CalculateDemo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/CalculateDemo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/Cellphone.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/Cellphone.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/Collection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/Collection.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/Complex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/Complex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/HighLevelFunc.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/HighLevelFunc.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/InjectDemo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/InjectDemo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/IntList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/IntList.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/LongestSubstringWithoutRepeatingCharacters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/LongestSubstringWithoutRepeatingCharacters.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/NotNullDemo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/NotNullDemo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/Person.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/Person.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/PlayerState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/PlayerState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/PropertiesDelegate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/PropertiesDelegate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/SamsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/SamsTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/SelfType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/SelfType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/SimpleClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/SimpleClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/Singleton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/Singleton.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/SixDemo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/SixDemo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/State.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/State.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/StringExt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/StringExt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/Student.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/Student.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/StudentNoConstructor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/StudentNoConstructor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/Study.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/Study.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/hui/kotlin/TList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hui/kotlin/TList.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/AddBinary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/AddBinary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/AddTwoNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/AddTwoNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/BinaryTreeInorderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/BinaryTreeInorderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/BinaryTreeLevelOrderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/BinaryTreeLevelOrderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/BinaryTreePreorderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/BinaryTreePreorderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/ClimbingStairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/ClimbingStairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/CombinationSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/CombinationSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/ContainerWithMostWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/ContainerWithMostWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/ConvertIntegerLcci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/ConvertIntegerLcci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/CountAndSay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/CountAndSay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/EditDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/EditDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/GenerateParentheses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/GenerateParentheses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/HammingDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/HammingDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/IntersectionOfTwoLinkedLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/IntersectionOfTwoLinkedLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/InvertBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/InvertBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/LinkedListCycleIi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/LinkedListCycleIi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/LongestPalindromicSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/LongestPalindromicSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/LongestSubstringWithoutRepeatingCharacters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/LongestSubstringWithoutRepeatingCharacters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/LowestCommonAncestorOfABinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/LowestCommonAncestorOfABinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/LruCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/LruCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/MaximumDepthOfBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/MaximumDepthOfBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/MedianOfTwoSortedArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/MedianOfTwoSortedArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/MergeKSortedLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/MergeKSortedLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/MergeTwoBinaryTrees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/MergeTwoBinaryTrees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/MergeTwoSortedLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/MergeTwoSortedLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/MinimumHeightTreeLcci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/MinimumHeightTreeLcci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/MoveZeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/MoveZeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/NextPermutation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/NextPermutation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/PalindromeLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/PalindromeLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/PalindromicSubstrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/PalindromicSubstrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/PlusOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/PlusOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/ReverseInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/ReverseInteger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/ReverseLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/ReverseLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/SortColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/SortColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/SortList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/SortList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/StringToIntegerAtoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/StringToIntegerAtoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/Subsets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/Subsets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/TwoSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/TwoSum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/ValidParentheses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/ValidParentheses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/ZigzagConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/ZigzagConversion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/AddBinary.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/AddBinary.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/AddTwoNumbers.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/AddTwoNumbers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/BinaryTreeInorderTraversal.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/BinaryTreeInorderTraversal.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/BinaryTreeLevelOrderTraversal.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/BinaryTreeLevelOrderTraversal.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/BinaryTreePreorderTraversal.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/BinaryTreePreorderTraversal.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ClimbingStairs.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/ClimbingStairs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/CombinationSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/CombinationSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ContainerWithMostWater.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/ContainerWithMostWater.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/CountAndSay.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/CountAndSay.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/CountingBits.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/CountingBits.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/DesignGraphWithShortestPathCalculator.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/DesignGraphWithShortestPathCalculator.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/EditDistance.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/EditDistance.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/FindXorSumOfAllPairsBitwiseAnd.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/FindXorSumOfAllPairsBitwiseAnd.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/GenerateParentheses.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/GenerateParentheses.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/HammingDistance.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/HammingDistance.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/IntersectionOfTwoLinkedLists.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/IntersectionOfTwoLinkedLists.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/InvertBinaryTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/InvertBinaryTree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/LongestPalindromicSubstring.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/LongestPalindromicSubstring.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/LongestSubstringWithoutRepeatingCharacters.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/LongestSubstringWithoutRepeatingCharacters.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/LowestCommonAncestorOfABinarySearchTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/LowestCommonAncestorOfABinarySearchTree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/LruCache.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/LruCache.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/MaximumDepthOfBinaryTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/MaximumDepthOfBinaryTree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/MedianOfTwoSortedArrays.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/MedianOfTwoSortedArrays.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/MergeKSortedLists.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/MergeKSortedLists.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/MergeTwoBinaryTrees.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/MergeTwoBinaryTrees.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/MergeTwoSortedLists.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/MergeTwoSortedLists.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/MinimumHeightTreeLcci.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/MinimumHeightTreeLcci.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/MoveZeroes.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/MoveZeroes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/NextPermutation.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/NextPermutation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/PalindromeLinkedList.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/PalindromeLinkedList.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/PalindromicSubstrings.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/PalindromicSubstrings.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ParallelCoursesIi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/ParallelCoursesIi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/PlusOne.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/PlusOne.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ReverseInteger.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/ReverseInteger.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/SearchInRotatedSortedArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/SearchInRotatedSortedArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/SortColors.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/SortColors.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/SortList.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/SortList.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/StringToIntegerAtoi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/StringToIntegerAtoi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/Subsets.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/Subsets.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ThreeSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/ThreeSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/TwoSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/TwoSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/ZigzagConversion.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/ZigzagConversion.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[10]Regular Expression Matching.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[10]Regular Expression Matching.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[11]盛最多水的容器.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[11]盛最多水的容器.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[1]Two Sum.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[1]Two Sum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[1]两数之和.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[1]两数之和.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[2642]Design Graph With Shortest Path Calculator.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[2642]Design Graph With Shortest Path Calculator.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[2]Add Two Numbers.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[2]Add Two Numbers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[338]比特位计数.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[338]比特位计数.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[3]Longest Substring Without Repeating Characters.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[3]Longest Substring Without Repeating Characters.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[3]无重复字符的最长子串.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[3]无重复字符的最长子串.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[4]Median of Two Sorted Arrays.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[4]Median of Two Sorted Arrays.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[518]零钱兑换 II.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[518]零钱兑换 II.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[6]Zigzag Conversion.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[6]Zigzag Conversion.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[7]Reverse Integer.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[7]Reverse Integer.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/content/[9]Palindrome Number.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/content/[9]Palindrome Number.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/note/EditDistance.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/note/EditDistance.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/note/InvertBinaryTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/note/InvertBinaryTree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/note/LowestCommonAncestorOfABinarySearchTree.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/note/LowestCommonAncestorOfABinarySearchTree.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/note/MinimumHeightTreeLcci.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/note/MinimumHeightTreeLcci.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/note/ParallelCoursesIi.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/note/ParallelCoursesIi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/104-er-cha-shu-de-zui-da-shen-du-die-dai-7nbe.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/104-er-cha-shu-de-zui-da-shen-du-die-dai-7nbe.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/104-er-cha-shu-de-zui-da-shen-du-hou-xu-txzrx.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/104-er-cha-shu-de-zui-da-shen-du-hou-xu-txzrx.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/104-er-cha-shu-de-zui-da-shen-du-shen-du-6i0n.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/104-er-cha-shu-de-zui-da-shen-du-shen-du-6i0n.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/104er-cha-shu-de-zui-da-shen-du-by-mysti-yio3.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/104er-cha-shu-de-zui-da-shen-du-by-mysti-yio3.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/67-er-jin-zhi-qiu-he-by-wei-lai-yi-lai-z-y507.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/67-er-jin-zhi-qiu-he-by-wei-lai-yi-lai-z-y507.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/70-pa-lou-ti-by-mei-you-ni-na-you-wo-p4fi.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/70-pa-lou-ti-by-mei-you-ni-na-you-wo-p4fi.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/70-pa-lou-ti-dong-tai-gui-hua-qing-xi-tu-ruwa.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/70-pa-lou-ti-dong-tai-gui-hua-qing-xi-tu-ruwa.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/72-bian-ji-ju-chi-by-xtcc-e0ep.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/72-bian-ji-ju-chi-by-xtcc-e0ep.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/8-zi-fu-chuan-zhuan-huan-zheng-shu-atoiq-a2e8.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/8-zi-fu-chuan-zhuan-huan-zheng-shu-atoiq-a2e8.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/bian-ji-ju-chi-by-leetcode-solution.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/bian-ji-ju-chi-by-leetcode-solution.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/by-lfool-2mvg.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/by-lfool-2mvg.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/by-nehzil-a8ue.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/by-nehzil-a8ue.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/cai-niao-javajie-fa-by-charles-zu-p847.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/cai-niao-javajie-fa-by-charles-zu-p847.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/chi-chu-huan-jiu-na-ge-xin-xin-bei-zeng-u65p8.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/chi-chu-huan-jiu-na-ge-xin-xin-bei-zeng-u65p8.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/container-with-most-water-shuang-zhi-zhen-fa-yi-do.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/container-with-most-water-shuang-zhi-zhen-fa-yi-do.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/di-gui-er-cha-shu-zui-da-shen-du-by-wen-mbu4f.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/di-gui-er-cha-shu-zui-da-shen-du-by-wen-mbu4f.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/di-yi-ci-bu-kan-da-an-xie-chu-lai-555gei-744n.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/di-yi-ci-bu-kan-da-an-xie-chu-lai-555gei-744n.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/dong-hua-yan-shi-94-er-cha-shu-de-zhong-xu-bian-li.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/dong-hua-yan-shi-94-er-cha-shu-de-zhong-xu-bian-li.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/dong-tai-gui-hua-by-isenninha-uqo8.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/dong-tai-gui-hua-by-isenninha-uqo8.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/edit-distance-by-ikaruga.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/edit-distance-by-ikaruga.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/er-cha-shu-de-qian-xu-bian-li-by-leetcode-solution.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/er-cha-shu-de-qian-xu-bian-li-by-leetcode-solution.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/er-cha-shu-de-zhong-xu-bian-li-by-leetcode-solutio.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/er-cha-shu-de-zui-da-shen-du-by-leetcode-solution.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/er-cha-shu-de-zui-da-shen-du-by-leetcode-solution.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/er-jin-zhi-qiu-he-by-leetcode-solution.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/er-jin-zhi-qiu-he-by-leetcode-solution.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/er-jin-zhi-qiu-he-yuan-di-ni-zhi-0mscyu-y8mli.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/er-jin-zhi-qiu-he-yuan-di-ni-zhi-0mscyu-y8mli.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/fang-fa-bi-jiao-ben-cong-hou-wang-qian-q-gh9z.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/fang-fa-bi-jiao-ben-cong-hou-wang-qian-q-gh9z.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/fei-bo-na-qi-shu-lie-bian-xing-ti-by-luk-nmaa.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/fei-bo-na-qi-shu-lie-bian-xing-ti-by-luk-nmaa.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/fei-bo-na-qi-shu-lie-by-kind-kellernuf-8xom.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/fei-bo-na-qi-shu-lie-by-kind-kellernuf-8xom.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/gen-ju-qi-ta-jing-cai-de-jie-ti-zong-jie-chu-lai-d.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/gen-ju-qi-ta-jing-cai-de-jie-ti-zong-jie-chu-lai-d.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/gong-shui-san-xie-tong-ji-liang-shu-er-j-987a.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/gong-shui-san-xie-tong-ji-liang-shu-er-j-987a.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/gua-hao-sheng-cheng-by-leetcode-solution.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/gua-hao-sheng-cheng-by-leetcode-solution.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/hua-jie-suan-fa-104-er-cha-shu-de-zui-da-shen-du-b.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/hua-jie-suan-fa-104-er-cha-shu-de-zui-da-shen-du-b.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/hua-jie-suan-fa-67-er-jin-zhi-qiu-he-by-guanpengch.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/hua-jie-suan-fa-67-er-jin-zhi-qiu-he-by-guanpengch.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/hua-jie-suan-fa-70-pa-lou-ti-by-guanpengchn.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/hua-jie-suan-fa-70-pa-lou-ti-by-guanpengchn.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/hui-su-bu-hui-xie-tao-lu-zai-ci-pythonja-wcdw.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/hui-su-bu-hui-xie-tao-lu-zai-ci-pythonja-wcdw.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/hui-su-suan-fa-by-liweiwei1419.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/hui-su-suan-fa-by-liweiwei1419.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/javapython3clei-er-fen-cha-zhao-li-yong-1q4gu.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/javapython3clei-er-fen-cha-zhao-li-yong-1q4gu.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-uo5q.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/jiao-ni-yi-bu-bu-si-kao-dong-tai-gui-hua-uo5q.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/kuai-su-pai-xu-partition-guo-cheng-she-ji-xun-huan.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/kuai-su-pai-xu-partition-guo-cheng-she-ji-xun-huan.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/liang-chong-fang-fa-zi-ding-xiang-xia-he-14jy.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/liang-chong-fang-fa-zi-ding-xiang-xia-he-14jy.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/mian-shi-ti-0402-zui-xiao-gao-du-shu-by-xb1cp.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/mian-shi-ti-0402-zui-xiao-gao-du-shu-by-xb1cp.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/shen-du-you-xian-bian-li-by-lbj-44-lprk.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/shen-du-you-xian-bian-li-by-lbj-44-lprk.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/shen-du-you-xian-bian-li-zui-jian-jie-yi-ypti.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/shen-du-you-xian-bian-li-zui-jian-jie-yi-ypti.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/shou-hua-tu-jie-by-xiao_ben_zhu-3.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/shou-hua-tu-jie-by-xiao_ben_zhu-3.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/shu-ju-jie-gou-he-suan-fa-dong-tai-gui-h-3bms.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/shu-ju-jie-gou-he-suan-fa-dong-tai-gui-h-3bms.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/sui-ran-bu-shi-zui-xiu-de-dan-zhi-shao-n-0yt3.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/sui-ran-bu-shi-zui-xiu-de-dan-zhi-shao-n-0yt3.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/tu-jie-xiang-jiao-lian-biao-by-user7208t.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/tu-jie-xiang-jiao-lian-biao-by-user7208t.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetc-2.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/wu-zhong-fu-zi-fu-de-zui-chang-zi-chuan-by-leetc-2.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/xia-yi-ge-pai-lie-by-leetcode-solution.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/xia-yi-ge-pai-lie-by-leetcode-solution.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-2.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-2.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/xiao-xue-suan-zhu-si-wei-ge-ge-jin-zhi-t-osnj.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/xiao-xue-suan-zhu-si-wei-ge-ge-jin-zhi-t-osnj.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/yi-ming-ju-chi-by-leetcode-solution-u1w7.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/yi-ming-ju-chi-by-leetcode-solution-u1w7.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/yi-pian-wen-zhang-dai-ni-chi-tou-dui-che-asg8.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/yi-pian-wen-zhang-dai-ni-chi-tou-dui-che-asg8.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/yi-pian-wen-zhang-dai-ni-chi-tou-dui-che-szhm.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/yi-pian-wen-zhang-dai-ni-chi-tou-dui-che-szhm.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/zhong-xin-kuo-san-fa-he-dong-tai-gui-hua-by-reedfa.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/zhong-xin-kuo-san-fa-he-dong-tai-gui-hua-by-reedfa.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/zi-di-xiang-shang-he-zi-ding-xiang-xia-by-powcai-3.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/zi-di-xiang-shang-he-zi-ding-xiang-xia-by-powcai-3.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/zi-ji-by-leetcode-solution.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/zi-ji-by-leetcode-solution.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/zui-jian-dan-yi-dong-de-dong-tai-gui-hua-bu-lun-da.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/zui-jian-dan-yi-dong-de-dong-tai-gui-hua-bu-lun-da.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/solution/zui-jian-ji-de-shuang-zhi-zhen-jie-fa-yi-gtfz.lcv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/solution/zui-jian-ji-de-shuang-zhi-zhen-jie-fa-yi-gtfz.lcv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/BinaryTreeInorderTraversal476691424.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/BinaryTreeInorderTraversal476691424.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/BinaryTreeInorderTraversal476693894.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/BinaryTreeInorderTraversal476693894.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/BinaryTreeLevelOrderTraversal476700429.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/BinaryTreeLevelOrderTraversal476700429.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/BinaryTreePreorderTraversal200786309.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/BinaryTreePreorderTraversal200786309.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/BinaryTreePreorderTraversal204068326.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/BinaryTreePreorderTraversal204068326.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/ClimbingStairs202491394.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/ClimbingStairs202491394.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/CountingBits530879558.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/CountingBits530879558.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/EditDistance134092815.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/EditDistance134092815.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/IntersectionOfTwoLinkedLists522261838.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/IntersectionOfTwoLinkedLists522261838.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/InvertBinaryTree476697599.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/InvertBinaryTree476697599.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/InvertBinaryTree521872394.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/InvertBinaryTree521872394.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/LongestPalindromicSubstring289147274.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/LongestPalindromicSubstring289147274.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/LongestPalindromicSubstring425795948.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/LongestPalindromicSubstring425795948.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/LowestCommonAncestorOfABinarySearchTree182119317.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/LowestCommonAncestorOfABinarySearchTree182119317.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/LowestCommonAncestorOfABinarySearchTree521951643.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/LowestCommonAncestorOfABinarySearchTree521951643.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/LruCache477633120.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/LruCache477633120.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/MergeKSortedLists522333415.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/MergeKSortedLists522333415.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/MergeTwoSortedLists129669098.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/MergeTwoSortedLists129669098.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/MergeTwoSortedLists202761509.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/MergeTwoSortedLists202761509.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/MergeTwoSortedLists517787963.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/MergeTwoSortedLists517787963.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/doc/submission/ZigzagConversion430084131.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/editor/cn/doc/submission/ZigzagConversion430084131.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="LeetCodeProj" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;IgnorantGirl&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ce66a885-d3b2-4337-a91d-2ba9c0a9040e" />
+        <option name="url" value="https://github.com/IgnorantGirl/LeetCodeProj.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2eAKrqRZkBjiDOZ5KPtaBH7eDcO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.AddBinary.executor": "Run",
+    "Application.AddTwoNumbers.executor": "Run",
+    "Application.AtomicDemo.executor": "Run",
+    "Application.BinaryTreeInorderTraversal.executor": "Debug",
+    "Application.BinaryTreeLevelOrderTraversal.executor": "Debug",
+    "Application.ClimbingStairs.executor": "Run",
+    "Application.CloseStrings1657.executor": "Run",
+    "Application.CombinationSum.executor": "Run",
+    "Application.ContainerWithMostWater.executor": "Run",
+    "Application.CountAndSay.executor": "Run",
+    "Application.EditDistance.executor": "Run",
+    "Application.GenerateParentheses.executor": "Run",
+    "Application.HammingDistance.executor": "Run",
+    "Application.IntersectionOfTwoLinkedLists.executor": "Run",
+    "Application.LongestPalindromicSubstring.executor": "Run",
+    "Application.LongestSubstringWithoutRepeatingCharacters.executor": "Run",
+    "Application.MaxSlidingWindow239.executor": "Run",
+    "Application.MedianOfTwoSortedArrays.executor": "Run",
+    "Application.MergeKSortedLists.executor": "Run",
+    "Application.MergeTwoBinaryTrees.executor": "Run",
+    "Application.MergeTwoSortedLists.executor": "Run",
+    "Application.NextPermutation.executor": "Run",
+    "Application.PalindromicSubstrings.executor": "Run",
+    "Application.QuickSort.executor": "Run",
+    "Application.SimpleFactoryDemo.executor": "Run",
+    "Application.SortColors.executor": "Run",
+    "Application.StringToIntegerAtoi.executor": "Run",
+    "Application.TowSum.executor": "Run",
+    "Application.TwoSum.executor": "Run",
+    "Application.ZigzagConversion.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.Build LeetCodeProj.executor": "Run",
+    "Gradle.LeetCodeProj [dependencies].executor": "Run",
+    "Gradle.LeetCodeProj.executor": "Run",
+    "Kotlin.BasicDemoKt.executor": "Run",
+    "Kotlin.BookKt.executor": "Debug",
+    "Kotlin.CalculateDemoKt.executor": "Debug",
+    "Kotlin.CollectionKt.executor": "Run",
+    "Kotlin.ComplexKt.executor": "Run",
+    "Kotlin.HighLevelFuncKt.executor": "Run",
+    "Kotlin.KotlinReflectionsKt (1).executor": "Run",
+    "Kotlin.KotlinReflectionsKt.executor": "Run",
+    "Kotlin.LongestSubstringWithoutRepeatingCharactersKt.executor": "Debug",
+    "Kotlin.PersonKt.executor": "Run",
+    "Kotlin.PropertiesDelegateKt.executor": "Debug",
+    "Kotlin.SelfTypeKt.executor": "Run",
+    "Kotlin.SimpleClassKt.executor": "Run",
+    "Kotlin.SingletonKt.executor": "Run",
+    "Kotlin.SixDemoKt.executor": "Run",
+    "Kotlin.StateKt.executor": "Run",
+    "Kotlin.StringExtKt.executor": "Run",
+    "Kotlin.StudentKt.executor": "Debug",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/heidi/IdeaProjects/LeetCodeProj/src/main/java/com/hui",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "leetcode.id",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/hui" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.hui.kotlin" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle --build-cache" />
+      <command value="gradle --configuration-cache" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Kotlin.KotlinReflectionsKt (1)">
+    <configuration name="LeetCodeProj [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LeetCodeProj" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--build-cache" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="KotlinReflectionsKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hui.kotlin.KotlinReflectionsKt" />
+      <module name="LeetCodeProj.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KotlinReflectionsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hui.kotlin.KotlinReflectionsKt" />
+      <module name="LeetCodeProj" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StateKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hui.kotlin.StateKt" />
+      <module name="LeetCodeProj" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.KotlinReflectionsKt (1)" />
+        <item itemvalue="Kotlin.KotlinReflectionsKt" />
+        <item itemvalue="Gradle.LeetCodeProj [dependencies]" />
+        <item itemvalue="Gradle.LeetCodeProj" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_392-azul-1.8.0_392-4caba194b151-3cec404c" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a446ea25-97ee-4c90-9a00-fb0b986727a2" name="Changes" comment="" />
+      <created>1711342143784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711342143784</updated>
+      <workItem from="1713875004530" duration="1775000" />
+    </task>
+    <task id="LOCAL-00001" summary="[]二叉树相关">
+      <option name="closed" value="true" />
+      <created>1712671251822</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712671251822</updated>
+    </task>
+    <task id="LOCAL-00002" summary="简单工厂模式">
+      <option name="closed" value="true" />
+      <created>1714309023076</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714309023076</updated>
+    </task>
+    <task id="LOCAL-00003" summary="【38】外观数列">
+      <option name="closed" value="true" />
+      <created>1715343600772</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715343600772</updated>
+    </task>
+    <task id="LOCAL-00004" summary="【】Kotlin学习">
+      <option name="closed" value="true" />
+      <created>1721307779806</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721307779806</updated>
+    </task>
+    <task id="LOCAL-00005" summary="【】Kotlin学习">
+      <option name="closed" value="true" />
+      <created>1721385797769</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721385797769</updated>
+    </task>
+    <task id="LOCAL-00006" summary="【】Kotlin学习 泛型">
+      <option name="closed" value="true" />
+      <created>1722257403157</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722257403157</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="[]二叉树相关" />
+    <MESSAGE value="简单工厂模式" />
+    <MESSAGE value="【38】外观数列" />
+    <MESSAGE value="【】Kotlin学习" />
+    <MESSAGE value="【】Kotlin学习 泛型" />
+    <option name="LAST_COMMIT_MESSAGE" value="【】Kotlin学习 泛型" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/AddTwoNumbers.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/HammingDistance.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/HammingDistance.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/NextPermutation.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/BinaryTreeInorderTraversal.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/SortColors.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/PalindromicSubstrings.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/PalindromicSubstrings.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/MergeTwoBinaryTrees.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/editor/cn/StringToIntegerAtoi.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
