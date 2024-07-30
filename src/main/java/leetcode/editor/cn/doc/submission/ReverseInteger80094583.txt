@@ -1,0 +1,34 @@
+class Solution {
+    public int reverse(int x) {
+
+         int result = 0;
+         
+         if(x==0) return 0;
+         while(x!=0){
+             //获取每一位的数字
+             int  temp = x%10;
+             //将每一位数字往前移动 
+             int  tempRestult = result*10 + temp;
+             //判断是否 大于 最大32位整数
+            if (result>214748364 || (result==214748364 && temp>7)) {
+                return 0;
+            }
+            //判断是否 小于 最小32位整数
+            if (result<-214748364 || (result==-214748364 && temp<-8)) {
+                return 0;
+            }
+
+             result = tempRestult;
+
+             x = x/10;
+
+            // if ((newRes - t) / 10 != res)
+            //     return 0;
+        
+         }
+         return result;
+        
+    }
+}
+//runtime:1 ms
+//memory:36.2 MB

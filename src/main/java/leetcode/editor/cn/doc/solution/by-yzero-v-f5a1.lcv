@@ -1,0 +1,60 @@
+首先这一题可以使用动态规划来进行解决：
+
+在确定递推公式时，就要分析如下几种情况。
+
+整体上是两种，就是`s[i]`与`s[j]`相等，`s[i]`与`s[j]`不相等这两种。
+
+当`s[i]`与`s[j]`不相等，那没啥好说的了，`dp[i][j]`一定是false。
+
+当`s[i]`与`s[j]`相等时，这就复杂一些了，有如下三种情况
+情况一：下标i与j相同，同一个字符例如a，当然是回文子串
+
+情况二：下标i与j相差为1，例如`aa`，也是文子串
+
+情况三：下标：i与j相差大于1的时候，例如`cabac`，此时`s[i]`与`s[j]`已经相同了，我们看i到j区间是不是回文子串就看aba是不是回文就可以了，那么aba的区间就是i+1与j-1区间，这个区间是不是回文就看`dp[i + 1][j-1]`是否为true。
+
+首先从递推公式中可以看出，情况三是根据`dp[i + 1][j - 1]`是否为true，在对`dp[i][j]`进行赋值 true的。 `dp[i + 1][j - 1]` 在 `dp[i][j]`的左下角，如图
+
+![image.png](https://pic.leetcode.cn/1674012957-JBOaWT-image.png)
+
+为了确保`dp[i+1][j-1]`先被计算出来，我们需要从下到上,从左到右进行遍历。
+
+举例，输入："aaa"，dp[i][j]状态如下：
+
+![image.png](https://pic.leetcode.cn/1674013269-Qxfayq-image.png)
+
+空白的地方表示初始化为false.
+
+* go
+
+```go
+func countSubstrings(s string) int {
+    //遍历到这个字符本身+1.
+    //还需要考虑到二维的dp[i][j]表示以i结尾和以j结尾的是不是回文.
+
+    n := len(s)
+    dp := make([][]bool, n)
+    for i:=0;i<n;i++{
+        dp[i] = make([]bool, n)
+    }
+    //需要从下到上,从左到右遍历.
+    result := 0
+    for i:=n-1;i>=0;i--{
+        for j:=i;j<n;j++{
+            if s[i] == s[j]{
+                //如果相等,判断一下长度.
+                if (j-i) <=1{
+                    //相等,肯定是回文了
+                    result++
+                    dp[i][j] = true
+                }else if (dp[i+1][j-1]){
+                    result++
+                    dp[i][j] = true
+                }
+            }
+        }
+    }
+    return result
+}
+```
+

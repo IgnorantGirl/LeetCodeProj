@@ -1,0 +1,22 @@
+    class Solution {
+        public int findMin(int[] nums) {
+            int len = nums.length;
+            if (len == 0) {
+                return -1;
+            }
+            int left = 0;
+            int right = len - 1;
+            while (left < right) {
+                int mid = left + (right - left) / 2;
+                if (nums[mid] > nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+            return nums[right];
+        }
+    }
+
+//runtime:0 ms
+//memory:40.9 MB

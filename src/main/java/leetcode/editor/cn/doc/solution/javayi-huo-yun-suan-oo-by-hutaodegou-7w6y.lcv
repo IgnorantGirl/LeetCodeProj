@@ -1,0 +1,13 @@
+两数异或后，不同值都变成了新值中的1，计算1的个数。
+
+* 
+
+```
+class Solution {
+    public int convertInteger(int A, int B) {
+        int diff = A ^ B;
+        return Integer.bitCount(diff);
+    }
+}
+```
+

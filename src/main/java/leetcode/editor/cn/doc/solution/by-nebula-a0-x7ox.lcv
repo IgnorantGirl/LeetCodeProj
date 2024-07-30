@@ -1,0 +1,135 @@
+### 题解1：
+
+这就是找出A和B对应的二进制中不同的位数。
+<br>
+**思路：**
+
+1、当然这里需要考虑A,B为负数的情况。
+
+* 
+
+```
+所以，如果A或B为负数的话，那么我们将A变成A+2^32
+
+即如果A=-1
+那么对应的二进制为11111111 11111111 11111111 11111111
+```
+
+2、对于不足32位的二进制，我们需要补0
+
+* 
+
+```
+例如：2对应的二进制为10，
+为了便于对比，我们可以在二进制前面填充0，直到32位为止
+即2对应的二进制为
+00000000 00000000 00000000 00000010
+```
+
+3、两个字符串进行比较，如果不同的话，则加1
+
+<br> </br>
+
+代码如下：
+
+* python
+
+```python
+class Solution:
+    def convertInteger(self, A: int, B: int) -> int:
+        # 负数，考虑补码
+        if A < 0:
+            A = (1 << 32) + A
+        if B < 0:
+            B = (1 << 32) + B
+        strA = format(A, "#034b")
+        strB = format(B, "#034b")
+        num = 0
+        # 因为前面加上了ob,所以这里写34
+        for i in range(34):
+            if strA[i] != strB[i]:
+                num = num + 1
+        return num
+
+
+if __name__ == '__main__':
+    print(Solution().convertInteger(29, 15))
+```
+
+执行用时：40 ms, 在所有 Python3 提交中击败了33.14%的用户
+
+内存消耗：14.9 MB, 在所有 Python3 提交中击败了20.57%的用户
+
+通过测试用例：30 / 30
+
+<br> #### 优化： </br>
+
+* python
+
+```python
+class Solution:
+    def convertInteger(self, A: int, B: int) -> int:
+        # 负数，考虑补码
+        if A < 0:
+            A = (1 << 32) + A
+        if B < 0:
+            B = (1 << 32) + B
+        # 去掉前缀ob
+        strA = format(A, "032b")
+        strB = format(B, "032b")
+        num = 0
+        for i in range(32):
+            if strA[i] != strB[i]:
+                num = num + 1
+        return num
+```
+
+执行用时：24 ms, 在所有 Python3 提交中击败了98.29%的用户
+
+内存消耗：14.9 MB, 在所有 Python3 提交中击败了64.00%的用户
+
+通过测试用例：30 / 30
+
+<br><br>
+
+### 题解2：
+
+**位运算技巧**
+
+A&B,如果两个相应的位都为1，则该位的结果为1，否则为0
+
+例如：11&8!=0，那么可以11对应的二进制第4位为1
+<br>
+常用的小技巧为:
+
+* 
+
+```
+判断一个整数的每一位为0还是为1，我们可以使用&来进行判断
+所以我们
+A&1
+A&2
+A&4
+...
+A&2^32为！=0，则表示该位为1
+```
+
+<br> 代码如下： </br>
+
+* python
+
+```python
+class Solution:
+    def convertInteger(self, A: int, B: int) -> int:
+        num = 0
+        for i in range(32):
+            if (A & (1 << i)) != (B & (1 << i)):
+                num = num + 1
+        return num
+```
+
+执行用时：48 ms, 在所有 Python3 提交中击败了10.86%的用户
+
+内存消耗：14.8 MB, 在所有 Python3 提交中击败了78.86%的用户
+
+通过测试用例：30 / 30

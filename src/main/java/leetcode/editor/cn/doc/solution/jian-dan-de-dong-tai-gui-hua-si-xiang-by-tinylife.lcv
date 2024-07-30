@@ -1,0 +1,99 @@
+**方法一**：暴力法主要浪费在判断回文串上，不能有效利用同中心的回文串的状态，简单来说就是此时我们假设前面的子串`s[j,i]`是回文串，那么，子串`s[j-1,i+1]`也有可能是回文串，不难想出当且仅当子串`s[j,i]`是回文串且`s[j-1]=s[i+1]`时，子串`s[j-1,i+1]`也是回文串，于是我们可以通过数组保存子串是否是回文串，然后通过递推上一次的状态，得到下一次的状态，属于动态规划的解法，令`dp[j][i]`表示子串`s[j,i]`是否是回文串，状态转移如下：
+
+- 当`i=j`时，单个字符肯定是回文串，可以看成奇数回文串的起点
+- 当`s[i]=s[j]`且`i-j=1`，则`dp[j][i]`是回文串，可以看成偶数回文串的起点
+- 当`s[i]=s[j]`且`dp[j+1][i-1]`是回文串，则`dp[j][i]`也是回文串
+- 其他情形都不是回文串
+
+其中条件1、2、3是可以合并的：
+
+- 当`s[i]=s[j]`时，`dp[j+1][i-1]`是回文串或`i-j<2`，则`dp[j][i]`也是回文串
+
+* []
+
+```java
+class Solution {
+    public int countSubstrings(String s) {
+        int n = s.length();
+        int res = 0;
+        boolean[][] dp = new boolean[n][n];
+        for(int i=0;i<n;++i){
+            for(int j=0;j<=i;++j)
+                if(s.charAt(i) == s.charAt(j)&&(i-j<2 || dp[j+1][i-1])){
+                    dp[j][i] = true;
+                    ++res;
+                }
+            } 
+        return res;
+    }
+}
+```
+
+* []
+
+```python
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        res = 0
+        n = len(s)
+        dp = [[0] * n for _ in range(n)]
+        for i in range(n):
+            for j in range(i + 1):
+                if s[i] == s[j] and (i - j < 2 or dp[j + 1][i - 1]):
+                    dp[j][i] = 1
+                    res += 1
+        return res
+```
+
+**复杂度分析**
+- 时间复杂度：$O(n^2)$
+- 空间复杂度：$O(n^2)$
+
+**方法二**：动态规划的思想优点是比较好想，缺点也很明显，空间复杂度比较高，那么回顾一下，我们只是需要得到同中心的回文子串数目，显然只要我们找到子串的中心，然后使用两个指针不断向两端延伸即可，也就是中心扩展法，这样空间复杂度就降到O(1)了。找中心很简单，字符串中的元素逐一遍历即可，但是要注意是奇数还是偶数回文串，奇数回文串中心只有一个，而偶数回文串中心有两个，我们事先不知道奇偶，解决办法可以参考官方题解的，也可以都计算一遍，这样比较好想。
+
+* []
+
+```java
+class Solution {
+       public int countSubstrings(String s) {
+           int n = s.length();
+           int res = 0;
+           for(int i=0;i<n;++i){
+               res = midextend(s,i,i,res,n);
+               res = midextend(s,i,i+1,res,n);
+           } 
+           return res;
+       }
+       public int midextend(String s,int i,int j,int res,int n){
+           while(i >= 0 && j < n && s.charAt(i) == s.charAt(j)){
+               --i;
+               ++j;
+               ++res;
+           }
+           return res;
+       }
+   }
+```
+
+* []
+
+```python
+class Solution:
+        def countSubstrings(self, s: str) -> int:
+            n = len(s)
+            self.res = 0
+            def helper(i,j):
+                while i >= 0 and j < n and s[i] == s[j]:
+                    i -= 1
+                    j += 1
+                    self.res += 1
+            for i in range(n):
+                helper(i,i)
+                helper(i,i+1)
+            return self.res
+```
+
+**复杂度分析**
+- 时间复杂度：$O(n^2)$
+- 空间复杂度：$O(1)$
+

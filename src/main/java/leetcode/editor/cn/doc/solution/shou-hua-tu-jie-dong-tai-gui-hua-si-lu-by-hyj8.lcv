@@ -1,0 +1,233 @@
+#### 暴力法
+
+两层循环，考察所有子串，判断是否是回文串。时间复杂度 $O(n^3)$，空间复杂度：$O(1)$。
+
+* []
+
+```javascript
+const isPalindrome = (s) => {
+  let i = 0;
+  let j = s.length - 1;
+  while (i < j) {
+    if (s[i] != s[j]) return false;
+    i++;
+    j--;
+  }
+  return true;
+};
+
+const countSubstrings = (s) => {
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    for (let j = i; j < s.length; j++) {
+      if (isPalindrome(s.substring(i, j + 1))) {
+        count++;
+      }
+    }
+  }
+  return count;
+};
+```
+
+* []
+
+```go
+func countSubstrings(s string) int {
+	count := 0
+	for i := 0; i < len(s); i++ {
+		for j := i; j < len(s); j++ {
+			if isPalindrome(s[i : j+1]) {
+				count++
+			}
+		}
+	}
+	return count
+}
+
+func isPalindrome(s string) bool {
+	i, j := 0, len(s)-1
+	for i < j {
+		if s[i] != s[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
+}
+```
+
+#### 动态规划 思路
+
+有时我们想到动态规划，但不知从何入手，可以试试这么想：
+1. 大问题是什么？
+2. 规模小一点的子问题是什么？
+3. 它们之间有什么联系？
+
+- 大问题是一个子串是否是回文串，然后统计有几个回文子串，那规模小一点的子问题呢？
+- 一个子串是回文串，刨去相同的首尾字符，剩下的子串也必须是回文串。
+- 剩下的子串是否为回文串，就是规模小一点的子问题，它影响大问题的结果。
+
+子串的首尾索引 i 、j 是描述子问题的变量，$s[i:j]$ 是否是回文串，是 dp 子问题。
+
+用二维 Boolean 数组记录中間子问题的解，从base case出发，递推出每个子问题的解。
+
+别忘了需满足 $i<=j$，所以只用填半个 table，如图：
+
+![image.png](https://pic.leetcode-cn.com/f41977057aa5ce724f450042512d5a4c7bdbd57dadda7d5e18ec546729442bb8-image.png)
+
+$s[i:j]$ 什么时候是回文？（`dp[i][j]`为 true），我们罗列一下：
+1. 由单个字符组成。（上图打钩的格子）
+2. 由 2 个字符组成，且字符要相同。（1、2 是base case，不需要用到递推公式）
+3. 由超过 2 个字符组成，首尾字符相同，且剩余子串是一个回文串。（状态转移方程）
+
+时间复杂度：$O(n^2)$，空间复杂度：$O(n^2)$
+
+* []
+
+```js
+const countSubstrings = (s) => {
+  let count = 0;
+  const len = s.length;
+
+  const dp = new Array(len);
+  for (let i = 0; i < len; i++) {
+    dp[i] = new Array(len).fill(false); // 二维矩阵
+  }
+
+  for (let j = 0; j < len; j++) { // 注意扫描矩阵的方向，下面会解释
+    for (let i = 0; i <= j; i++) {
+      if (i == j) {   // 单个字符的情况
+        dp[i][j] = true;
+        count++;
+      } else if (j - i == 1 && s[i] == s[j]) { // 两个字符的情况 
+        dp[i][j] = true;
+        count++;
+      } else if (j - i > 1 && s[i] == s[j] && dp[i + 1][j - 1]) { // 多于两个字符
+        dp[i][j] = true;
+        count++;
+      }
+    }
+  }
+  return count;
+};
+```
+
+* []
+
+```go
+func countSubstrings(s string) int {
+	count := 0
+	dp := make([][]bool, len(s))
+	for i := 0; i < len(dp); i++ {
+		dp[i] = make([]bool, len(s))
+	}
+
+	for j := 0; j < len(s); j++ {
+		for i := 0; i <= j; i++ {
+			if i == j {
+				dp[i][j] = true
+				count++
+			} else if j-i == 1 && s[i] == s[j] {
+				dp[i][j] = true
+				count++
+			} else if j-i > 1 && s[i] == s[j] && dp[i+1][j-1] {
+				dp[i][j] = true
+				count++
+			}
+		}
+	}
+	return count
+}
+
+```
+
+画个图看看状态转移的方向，决定选用从左上角开始的计算方向，这保证了计算`dp[i][j]`时，`dp[i+1][j-1]`肯定计算过了。扫描方向的确定，是容易出错的点。
+
+![image.png](https://pic.leetcode-cn.com/17dc7e2a1d0cb9916917e2121ec59d838bc453a4c83df1f60b2f28f10a1f986e-image.png)
+
+#### 降维，空间复杂度优化为 O(n)
+
+把上图的表格横向压扁，竖向一列看作一维数组，还是原来的扫描方向。一维表格中的格子在迭代中更新。
+
+* []
+
+```js
+const countSubstrings = (s) => {
+  const len = s.length;
+  let count = 0;
+  const dp = new Array(len);
+
+  for (let j = 0; j < len; j++) {
+    for (let i = 0; i <= j; i++) {
+      if (j == i) {
+        dp[i] = true;
+        count++;
+      } else if (j - i == 1 && s[i] == s[j]) {
+        dp[i] = true;
+        count++;
+      } else if (j - i > 1 && s[i] == s[j] && dp[i + 1]) {
+        dp[i] = true;
+        count++;
+      } else {
+        dp[i] = false;
+      }
+    }
+  }
+  return count;
+};
+```
+
+* []
+
+```go
+func countSubstrings(s string) int {
+	count := 0
+	dp := make([]bool, len(s))
+
+	for j := 0; j < len(s); j++ {
+		for i := 0; i <= j; i++ {
+			if i == j {
+				dp[i] = true
+				count++
+			} else if j-i == 1 && s[i] == s[j] {
+				dp[i] = true
+				count++
+			} else if j-i > 1 && s[i] == s[j] && dp[i+1] {
+				dp[i] = true
+				count++
+			} else {
+				dp[i] = false
+			}
+		}
+	}
+	return count
+}
+```
+
+如果觉得啰嗦，可以稍微精简一下：
+
+* js
+
+```js
+const countSubstrings = (s) => {
+  const len = s.length;
+  let count = 0;
+  const dp = new Array(len);
+
+  for (let j = 0; j < len; j++) {
+    for (let i = 0; i <= j; i++) {
+      if (s[i] == s[j] && (j - i <= 1 || dp[i + 1])) {
+        dp[i] = true;
+        count++;
+      } else {
+        dp[i] = false;
+      }
+    }
+  }
+  return count;
+};
+```
+
+#### 我把思路一点点展开讲了，图也丢了两张，起太早了，写累了，没在解析里写状态转移方程，它就在代码里，感谢阅读。
+

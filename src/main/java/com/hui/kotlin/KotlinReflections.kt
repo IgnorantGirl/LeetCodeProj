@@ -15,7 +15,7 @@ fun main() {
     val property =cls.declaredMemberProperties.firstOrNull()
     val objectInstance = cls.objectInstance
 
-    val
+ //   val
 }
 
 class A {

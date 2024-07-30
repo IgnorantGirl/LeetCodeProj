@@ -1,0 +1,18 @@
+class Solution {
+    public int fib(int n) {
+     if(n<=1) return n;
+     int[] count = new int[n+1];
+     return helper(n,count);
+    }
+
+    public int helper(int n,int[] count){
+       if(n==0) return 0;
+       if(n==1) return 1;
+        if(count[n]!=0) return count[n];
+        count[n] =  helper(n-1,count)%1000000007+helper(n-2,count)%1000000007;
+        return count[n]%1000000007;
+    }
+  
+}
+//runtime:0 ms
+//memory:35.3 MB

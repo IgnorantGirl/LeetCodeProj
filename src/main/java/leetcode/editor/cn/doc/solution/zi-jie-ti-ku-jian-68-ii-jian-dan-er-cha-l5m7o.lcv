@@ -1,0 +1,191 @@
+### 方法一：循环法前序遍历二叉树（利用 vector + deque）。
+
+1. 这道题最直观的思路应该就是找到从 root 到 p 的路径，以及从 root 到 q 的路径，然后找出两条路径上最后一个相同的节点。
+2. 这种思路最直观的实现方法就是循环法。我们可以用循环法来前序遍历二叉树。
+
+# 
+
+### 先放C++代码，思路清晰明了，关键注释已写好在代码中。
+
+* cpp
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (!root || !p || !q || p ==root || q == root) {
+            return root;
+        }
+
+        vector<TreeNode*> pPath;
+        vector<TreeNode*> qPath;
+
+        getNodePath(root, p, pPath); // 找到从 root 到 p 的路径
+        getNodePath(root, q, qPath); // 找到从 root 到 q 的路径
+
+        return getlowestCommonAncestor(pPath, qPath); // 返回两条路径上最后一个相同的节点
+    }
+
+    void getNodePath(TreeNode* root, TreeNode* node, vector<TreeNode*>& path) { // 注意传引用
+        if (!root || !node) {
+            return;
+        }
+
+        TreeNode* temp = root, *prev = nullptr;
+        deque<TreeNode*> store;
+
+        while (temp || !store.empty()) {
+            while (temp) {
+                store.push_back(temp);
+
+                if (temp == node) { // 中
+                    while (!store.empty()) {
+                        // 如果 root 匹配到了 node，填充 path 并退出函数
+                        TreeNode* t = store.front();
+                        path.push_back(t);
+                        store.pop_front();
+                    }
+                    return;
+                }
+
+                temp = temp -> left; // 左
+            }
+
+            temp = store.back();
+
+            if (!temp -> right || temp -> right == prev) {
+                // 如果 temp 没有右子节点，或者我们之前已经访问过其右子节点了
+                store.pop_back();
+                prev = temp;
+                temp = nullptr; // 这样就可以不进入上面那个 "while (temp)" 的子循环了
+            } else {
+                temp = temp -> right; // 右
+            }
+        }
+    }
+
+    TreeNode* getlowestCommonAncestor(vector<TreeNode*>& path1, vector<TreeNode*>& path2) { // 注意传引用
+        if (path1.empty() || path2.empty()) {
+            return nullptr;
+        }
+
+        int size = min(path1.size(), path2.size());
+        int i = 0;
+
+        for (; i < size; ++i) {
+            if (path1[i] == path2[i]) {
+                continue;
+            } else {
+                break; // 两条路径上的节点第一次不相同时，退出
+            }
+        }
+
+        return path1[i - 1]; // 返回两条路径上最后一次相同的节点
+    }
+};
+```
+
+### 执行结果截图：
+
+![image.png](https://pic.leetcode-cn.com/1610333683-cigkuq-image.png)
+
+# 
+
+### 方法二：递归法后序遍历二叉树。
+
+1. 先判断 root 是否等于 p 或 q。若等于，直接返回 root；若不等于，开始下面的步骤。
+2. 我们后序遍历二叉树，先去 root 的左子树找 p 或 q，再去 root 的右子树找 p 或 q，然后看左边和右边的寻找情况。
+3. 那么一共只有四种情况：左边没找到右边也没找到、左边找到了右边也找到了、左边没找到右边找到了、左边找到了右边没找到。
+   - 左边没找到右边也没找到。说明题目给的二叉树根本不包含 p 或 q，返回 nullptr。
+   - 左边找到了右边也找到了。说明 p 和 q 分居在 root 的两侧，那么最低公共祖先为 root，返回 root。
+   - 左边没找到右边找到了。说明 p 和 q 全都在 root 的右侧，加上我们在第一步就知道 root 不等于 p 也不等于 q，所以最低公共祖先在 root 的右子树，返回右子树。
+   - 左边找到了右边没找到。说明 p 和 q 全都在 root 的左侧，加上我们在第一步就知道 root 不等于 p 也不等于 q，所以最低公共祖先在 root 的左子树，返回左子树。
+
+# 
+
+### 先放C++代码，思路清晰明了
+
+* cpp
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (!root || !p || !q || p == root || q == root) {
+            return root;
+        }
+
+        TreeNode* leftTree = lowestCommonAncestor(root -> left, p, q);
+        TreeNode* rightTree = lowestCommonAncestor(root -> right, p, q);
+
+        if (!leftTree && !rightTree) {
+            return nullptr; // 左边没找到右边也没找到
+        } else if (leftTree && rightTree) {
+            return root; // 左边找到了右边也找到了
+        } else if (!leftTree && rightTree) {
+            return rightTree; // 左边没找到右边找到了
+        } else {
+            return leftTree; // 左边找到了右边没找到
+        }
+    }
+};
+```
+
+### 执行结果截图：
+
+![image.png](https://pic.leetcode-cn.com/1610349176-wVMNWi-image.png)
+
+# 
+
+### 写在最后
+
+# 
+
+花了研究生第一学期 + 半个寒假的时间，把这本《剑指offer》从头到尾刷了一遍，外加一些零零散散的别的题，收获还是非常大的。虽然真正的面试要考的内容远不止一道算法题，但是我认为有了好的算法底子，再去准备其他的必然是信心十足，因为算法题你都会做了，理解一点别的计算机概念又哪能难得倒你呢，给主菜加点 sauce 而已嘛。
+
+# 
+
+刷完了这本书，对面试会考的数据结构和有关算法这一块就算是入了门了，接下来的刷题计划应该是找一份清晰明了的 leetcode 题目分类名单（分类方式为各种数据结构和各种算法），针对每一类题目（比如 sorting 类、字符串类、二叉树类等）有重点地突破。同时也不能忘了这本《剑指offer》，时不时也需要回来接着二刷。
+
+# 
+
+这本《剑指offer》的每一题我都发布了题解，如果你也做了前面的题目并且有去后面看题解，那或许我的题解你也有看过。感谢曾经对我写的题解给出过好评以及意见的扣友，我致力于用纯文字来写出思路清晰易懂的题解，而不插入任何的图画或视频（可能也是由于我画画太差），因为我发现我个人对有图画或视频插入的思路类文章有些抵触，就是更喜欢看用文字就能讲清楚的文章。
+
+# 
+
+### 状态更新（10 Apr 2021）
+
+经过将近 3 周的面试以及评估，我终于在研究生第二学期结束前（5 月中旬）拿到了鹅厂的客户端开发实习 offer。特别巧的是，我通过了所有面试之后，却等 offer 等了一个多星期，正在十分心焦的时候，鹅厂的录取 offer 猝不及防地在我本科百年校庆的当晚（6 Apr 2021）发来了！可能这就是冥冥之中的某种定数吧。
+
+# 
+
+进入腾讯研发岗实习，于我个人而言是一个小小的成就，是我在个人技术道路上迈下的坚实一步。但是放全局来看，这只是一个很小的进步，还有无限的精彩等待我去探索、去发掘。在此记录一下，等到我成功迈出下一个坚实脚步的时候再回来这里回顾一番（hope soon enough）～毕竟这里是我的起点。
+
+# 
+
+感谢大家看到这里，如果大家对我的面试经历或者面试所问问题感兴趣，我可以空闲的时候写一篇复盘文章来总结一下～
+
+# 
+
+### Tracker
+
+1. 1刷：2021/01/11
+

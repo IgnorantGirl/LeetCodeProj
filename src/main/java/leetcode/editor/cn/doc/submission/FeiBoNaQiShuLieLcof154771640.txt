@@ -1,0 +1,22 @@
+class Solution {
+    public int fib(int n) {
+        if(n<1||n==0) return 0;     
+        int[] temp = new int[3];
+        if(n==1||n==2) return 1;
+        temp[1]=1;
+        temp[2] = temp[0]+temp[1];
+        for(int i=3;i<=n;i++){
+         
+          temp[0]=temp[1];
+          temp[1] = temp[2];
+          temp[2] =temp[0]+temp[1];
+        }
+        return temp[2]%1000000007;
+ }
+}
+//total_testcases:51
+//total_correct:27
+//input_formatted:48
+//expected_output:807526948
+//code_output:512559680
+//last_testcase:48

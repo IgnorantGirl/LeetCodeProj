@@ -1,0 +1,41 @@
+> Problem: [647. 回文子串](https://leetcode.cn/problems/palindromic-substrings/description/)
+
+[TOC]
+
+# 思路
+
+> 采用动态规划空间复杂度还是挺高的，so使用双指针的方法
+
+# 解题方法
+
+> 回文串肯定都是有一个中心的（1个点or2个点），通过中心往外扩增判断每一个中心的回文串的数量。
+
+# Code
+
+* []
+
+```C++
+class Solution {
+private:
+    int extend(const string& s, int i, int j, int n) {
+        int res = 0;
+        while (i >= 0 && j < n && s[i]==s[j]) {
+            res++, j++, i--;
+        }
+        return res;
+    }
+public:
+    int countSubstrings(string s) {
+        if (s.size() <= 1) {
+            return s.size();
+        }
+        int total = 0;
+        for (int i = 0; i < s.size(); i++) {
+            total += extend(s, i, i, s.size());
+            total += extend(s, i, i + 1, s.size());
+        }
+        return total;
+    }
+};
+```
+

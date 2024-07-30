@@ -1,0 +1,17 @@
+class Solution {
+    public int fib(int n) {
+       if(n==0)  return 0;
+       if(n==1)  return 1;
+       int[] res = new int[3];
+       res[0]=0;
+       res[1]=1;
+       for(int i=2;i<=n;i++){
+            res[2]=res[0]+res[1];
+            res[0]=res[1];
+            res[1]=res[2];
+       }
+       return res[2];
+    }
+}
+//runtime:0 ms
+//memory:35.1 MB

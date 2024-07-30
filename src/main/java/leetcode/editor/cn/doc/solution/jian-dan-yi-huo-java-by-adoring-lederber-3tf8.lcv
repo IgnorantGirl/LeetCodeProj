@@ -1,0 +1,18 @@
+### 代码
+
+* java
+
+```java
+class Solution {
+    public int convertInteger(int A, int B) {
+        int count = 0;
+        int x = A^B;// 先异或，AB的每位若不同，变为1
+        while(x != 0){// 再求位1的个数即可
+            x &= (x-1);
+            count++;
+        }
+        return count;
+    }
+}
+```
+

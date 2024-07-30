@@ -1,0 +1,26 @@
+class Solution {
+    public int findMin(int[] nums) {
+        int len = nums.length;
+        if(len == 1){
+            return nums[0];
+        }
+        int min = Math.min(nums[0],nums[len-1]);
+        if(min == nums[0]||len == 2){
+            return min;
+        }
+        // 寻找中中间最大的数
+        int left = 0;
+        int right = len-1;
+        while(left<right){
+            int mid = left+(right-left)/2;
+            if(nums[mid]<nums[right]){
+                right = mid;
+            }else{
+                left = mid+1;
+            }
+        }
+        return nums[right];
+    }
+}
+//runtime:0 ms
+//memory:41.1 MB

@@ -42,18 +42,47 @@ package leetcode.editor.cn;
 //
 // Related Topics 数组 数学 👍 1389 👎 0
 
-  public class PlusOne{
-      public static void main(String[] args) {
-           Solution solution = new PlusOne().new Solution();
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-      }
-      //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int[] plusOne(int[] digits) {
-        return null;
+public class PlusOne {
+    public static void main(String[] args) {
+        Solution solution = new PlusOne().new Solution();
+        int[] res = solution.plusOne(new int[]{8, 9, 9});
+        System.out.println(Arrays.toString(res));
     }
-}
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int[] plusOne(int[] digits) {
+            List<Integer> list = new ArrayList<>();
+            boolean flag = false;
+            for (int i = digits.length - 1; i >= 0; i--) {
+                if (digits[i] == 9 && (flag || i == digits.length - 1)) {
+                    list.add(0, 0);
+                    flag = true;
+                } else {
+                    if (i == digits.length - 1 || flag) {
+                        list.add(0, digits[i] + 1);
+                    } else {
+                        list.add(0, digits[i]);
+                    }
+                    flag = false;
+                }
+            }
+            // 最后需要进位的特殊处理
+            if (flag) {
+                list.add(0, 1);
+            }
+            int[] res = new int[list.size()];
+            for (int i = 0; i < res.length; i++) {
+                res[i] = list.get(i);
+            }
+            return res;
+        }
+    }
 //leetcode submit region end(Prohibit modification and deletion)
 
-  }
+}
   

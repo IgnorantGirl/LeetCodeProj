@@ -1,0 +1,16 @@
+### 解题思路
+
+**首先Integer.bitcount()的含义是统计一个数二进制码的1的位数，相当于统计1的个数，而a^b相当于两个二进制码进行异或运算，其相同的位则返回0不相同的位则返回1，这样子得出来的二进制码便是凡是1的都是不相同的，这样子统计一下1的个数接可以解决问题了**
+
+### 代码
+
+* java
+
+```java
+class Solution {
+    public int convertInteger(int A, int B) {
+        return Integer.bitCount(A^B); 
+    }
+}
+```
+

@@ -1,0 +1,53 @@
+> Problem: [338. 比特位计数](https://leetcode.cn/problems/counting-bits/description/)
+
+[TOC]
+
+# 思路
+
+> 讲述看到这一题的思路
+
+# 解题方法
+
+> 描述你的解题方法
+
+# 复杂度
+
+时间复杂度:
+
+> 添加时间复杂度, 示例： $O(n)$
+
+空间复杂度:
+
+> 添加空间复杂度, 示例： $O(n)$
+
+# Code
+
+* []
+
+```C++
+class Solution {
+public:
+    vector<int> countBits(int n) {
+        vector<int>ans;
+        int dp[100003]={0};
+        dp[1]=1;
+        ans.push_back(0);ans.push_back(1);
+        if(n>=2){
+            for(int i=2;i<=n;i++){
+                if(i%2){
+                    dp[i]=dp[i-1]+1;
+                }
+                else{
+                    dp[i]=dp[i/2];
+                }
+                ans.push_back(dp[i]);
+            }
+        }
+        else if(n==0){
+            ans.pop_back();
+        }
+        return ans;
+    }
+};
+```
+

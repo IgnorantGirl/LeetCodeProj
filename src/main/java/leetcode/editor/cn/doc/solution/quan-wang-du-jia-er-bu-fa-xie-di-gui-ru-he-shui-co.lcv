@@ -1,0 +1,81 @@
+本文适合尚在学习递归的朋友，但更欢迎大佬们指正（我也是算法萌新）(┬＿┬)。因为曾经深受递归的毒害，所以想借这道全书的最后一道题分享一个写递归程序的方法，也纪念刷完剑指offer😄！
+
+二步法写递归：
+1.明确函数作用
+2.明确函数返回值
+对！仅此而已！其他的因素比如函数的参数其实都包含在这里面了，下面用这道题细说。
+
+**前调：两个明确**
+前面说明确两点就能写出递归，但是怎么明确呢？个人感觉没有特定的流程，只能多做题总结。
+以这道题为例子，简述一下我明确这两点的心路
+1.肯定要后序遍历+肯定需要返回值
+因为在某一点进行祖先的判断，不可能只需要这个点的信息，而是需要左右子树信息。怎么把左右子树信息带到这个点？后序遍历用返回值带到这个点。
+2.函数作用是利用该点已知信息判断祖先，这个明显，照抄题目
+3.p和q只有两种情况
+1.同层
+2.不同层
+结合上述完善下两个明确
+函数作用：后序遍历发现root是p或q时候尝试看看能不能找到祖先，可能可以也可能不行，但遍历完一遍后一定可以
+返回值：返回p或q其中一个，没有返回null
+
+**递归：一个api**
+正确写出两个明确后，其实递归程序就轻而易举了。
+1.首先根据函数作用写出函数头
+2.**现在你得到了一个api，并知道了他的作用（即之前的函数作用）。用这个api根据函数作用写出函数体即可**
+3.根据明确的返回值补足函数体，这里的
+
+* 
+
+```
+if(left!=null)
+return left;
+if(right!=null)
+return right;
+```
+
+就是我通过返回值自然写出来的，写同层和不同层的情况处理也是根据函数作用如同喝水一样自然！有种写业务代码的感觉（笑）
+
+代码如下：
+
+* 
+
+```
+class Solution {
+    TreeNode find;
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        bianli(root,p,q);
+        return find;
+    }
+
+    //函数作用：后序遍历发现root是p或q时候尝试看看能不能找到祖先，可能可以也可能不行，但遍历完一遍后一定可以
+    //返回值：返回p或q其中一个，没有返回null
+    public TreeNode bianli(TreeNode root, TreeNode p, TreeNode q) {
+        if(root==null)
+        return null;
+
+        TreeNode left=bianli(root.left,p,q);
+        TreeNode right=bianli(root.right,p,q);       
+        
+        //不同层
+        if(root.val==p.val||root.val==q.val){
+            if(left!=null||right!=null){
+                find=root;
+            }
+            return root;
+        }
+        //同层
+        if(left!=null&&right!=null){
+            find=root;
+        }
+
+        if(left!=null)
+        return left;
+        if(right!=null)
+        return right;
+
+        return null;
+
+    }
+}
+```
+
